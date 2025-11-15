@@ -1289,3 +1289,7 @@ java.lang.NullPointerException: Cannot invoke "javax.swing.JTextField.getText()"
 2025-11-14 09:59:17,431 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
 2025-11-14 09:59:25,010 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
 2025-11-14 09:59:51,567 [INFO] DmaTabbedPanel:205 - Cannot restore the selected Tab for DMA
+2025-11-14 17:51:47,585 [INFO] WebApp:194 - Connection lost
+2025-11-14 17:51:47,770 [INFO] WebApp:191 - Connection restablished
+2025-11-14 17:51:50,110 [INFO] WebApp:194 - Connection lost
+2025-11-14 17:51:50,284 [INFO] WebApp:191 - Connection restablished
