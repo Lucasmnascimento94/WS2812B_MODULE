@@ -5,169 +5,6 @@
 	(uuid "f8a6b66f-328a-41c1-9e28-a27169bfbf18")
 	(paper "A0")
 	(lib_symbols
-		(symbol "Connector:Conn_01x02_Pin"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x02_Pin"
-				(at 0 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x02, script generated"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_01x02_Pin_1_1"
-				(rectangle
-					(start 0.8636 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 0.8636 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy 0.8636 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -2.54) (xy 0.8636 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 -2.54 180)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector_Generic:Conn_02x25_Odd_Even"
 			(pin_names
 				(offset 1.016)
@@ -1985,130 +1822,6 @@
 				(pin passive line
 					(at 0 -2.54 90)
 					(length 2.032)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Device:R"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "R"
-				(at 0 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R res resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_0_1"
-				(rectangle
-					(start -1.016 -2.54)
-					(end 1.016 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
 					(name "~"
 						(effects
 							(font
@@ -30868,16 +30581,6 @@
 	)
 	(wire
 		(pts
-			(xy -194.31 -53.34) (xy -194.31 -52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "024c45b6-ffe8-4aca-91c8-3d499b1ab8a7")
-	)
-	(wire
-		(pts
 			(xy 793.75 725.17) (xy 793.75 740.41)
 		)
 		(stroke
@@ -34745,16 +34448,6 @@
 			(type default)
 		)
 		(uuid "1882901a-8305-4d10-9b3b-fc84e08bbd47")
-	)
-	(wire
-		(pts
-			(xy -203.2 -52.07) (xy -201.93 -52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1887746d-4a82-41e5-8e6c-976cfb9dc69d")
 	)
 	(wire
 		(pts
@@ -67207,16 +66900,6 @@
 	)
 	(wire
 		(pts
-			(xy -205.74 -55.88) (xy -205.74 -49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c8018575-1325-4587-8fce-7df6cdf399fc")
-	)
-	(wire
-		(pts
 			(xy 1024.89 298.45) (xy 1024.89 313.69)
 		)
 		(stroke
@@ -72657,16 +72340,6 @@
 	)
 	(wire
 		(pts
-			(xy -203.2 -49.53) (xy -203.2 -52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e674c4f8-8f83-445a-93a6-72b570b458ac")
-	)
-	(wire
-		(pts
 			(xy 946.15 222.25) (xy 946.15 237.49)
 		)
 		(stroke
@@ -78096,16 +77769,6 @@
 		)
 		(uuid "b5e2c0e8-8024-4690-8a2a-ce1261196884")
 	)
-	(label "STM_SIGNAL"
-		(at -205.74 -55.88 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b8c3848e-cc40-4b9b-a349-800200e809cf")
-	)
 	(label "BURST_6"
 		(at -231.14 -119.38 90)
 		(effects
@@ -78375,28 +78038,6 @@
 			(justify left bottom)
 		)
 		(uuid "ff1e3649-1a5a-4637-a66d-f1bf17a3f17d")
-	)
-	(global_label "VCC_3.3V"
-		(shape output)
-		(at -194.31 -53.34 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "69a56941-d91e-42d1-a6a8-8afb3a6dcd81")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -194.31 -65.0338 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
 	)
 	(symbol
 		(lib_id "LED:WS2812B")
@@ -143419,76 +143060,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x02_Pin")
-		(at -205.74 -44.45 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5b7c44d8-0144-440f-9cdc-6290a7b1610a")
-		(property "Reference" "J4"
-			(at -200.66 -46.3551 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Conn_01x02_Pin"
-			(at -200.66 -43.8151 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Connector_JST:JST_EH_B2B-EH-A_1x02_P2.50mm_Vertical"
-			(at -205.74 -44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at -205.74 -44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at -205.74 -44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a5fbe8a0-d0ee-41bd-870e-74112311714e")
-		)
-		(pin "2"
-			(uuid "672e58bc-8a07-4a29-80cf-74cbf9f890d4")
-		)
-		(instances
-			(project ""
-				(path "/f8a6b66f-328a-41c1-9e28-a27169bfbf18"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "LED:WS2812B")
 		(at 515.62 481.33 270)
 		(unit 1)
@@ -150887,76 +150458,6 @@
 			(project "KICAD"
 				(path "/f8a6b66f-328a-41c1-9e28-a27169bfbf18"
 					(reference "D171")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at -198.12 -52.07 270)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "66dde326-443c-466d-8ccc-f5fa911dc95e")
-		(property "Reference" "R31"
-			(at -199.3901 -49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "10k"
-			(at -196.8501 -49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at -198.12 -50.292 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "RT0402BRD071K5L"
-			(at -198.12 -52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at -198.12 -52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "3fbb8179-148f-4b41-a494-f7981fb6e9cd")
-		)
-		(pin "1"
-			(uuid "10724b1d-bfac-4457-ba19-fd7dd68bebf0")
-		)
-		(instances
-			(project "KICAD"
-				(path "/f8a6b66f-328a-41c1-9e28-a27169bfbf18"
-					(reference "R31")
 					(unit 1)
 				)
 			)
@@ -232265,72 +231766,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at -186.69 -11.43 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d658de5f-cb91-48a3-a4b7-5a23ef8395d0")
-		(property "Reference" "#PWR033"
-			(at -186.69 -5.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at -186.69 -6.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at -186.69 -11.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at -186.69 -11.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at -186.69 -11.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "27d43f11-d84a-403c-a94c-8d4da8cf7067")
-		)
-		(instances
-			(project "KICAD"
-				(path "/f8a6b66f-328a-41c1-9e28-a27169bfbf18"
-					(reference "#PWR033")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "LED:WS2812B")
 		(at 452.12 725.17 270)
 		(unit 1)
@@ -255251,72 +254686,6 @@
 			(project "KICAD"
 				(path "/f8a6b66f-328a-41c1-9e28-a27169bfbf18"
 					(reference "D2116")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at -184.15 -11.43 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f6018727-9ef3-4fba-935a-e49e8314e4e2")
-		(property "Reference" "#PWR034"
-			(at -184.15 -5.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at -184.15 -6.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at -184.15 -11.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at -184.15 -11.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at -184.15 -11.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5a42347f-e680-4069-9d0d-1be2fb73b3f5")
-		)
-		(instances
-			(project "KICAD"
-				(path "/f8a6b66f-328a-41c1-9e28-a27169bfbf18"
-					(reference "#PWR034")
 					(unit 1)
 				)
 			)
