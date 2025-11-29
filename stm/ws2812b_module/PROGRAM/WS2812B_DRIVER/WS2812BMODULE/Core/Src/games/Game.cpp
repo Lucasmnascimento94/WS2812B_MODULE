@@ -1,0 +1,80 @@
+/*
+ * Game.cpp
+ *
+ *  Created on: Nov 28, 2025
+ *      Author: lucasnascimento
+ */
+
+
+#include "Game.hpp"
+#include "Records.hpp"
+using namespace std;
+
+Game::Game(string &name)
+	:game_name(name)
+{
+
+}
+
+
+/******************************************************************************/
+/*                        			SETTERS     		   	                  */
+/******************************************************************************/
+
+
+// -----------------------------------------------------------------------------
+// @brief  Set current Score in the game
+// -----------------------------------------------------------------------------
+void Game::setCurrentScore(uin32_t score){
+    this->current_score = score;
+    if (score > this->record_score) {
+        setRecordScore(score);
+        if (!this->newRecord) this->newRecord = true;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// @brief  Set record score
+// @param  score   New high score value
+// -----------------------------------------------------------------------------
+void Game::setRecordScore(uint32_t score) {
+    this->record_score = score;
+}
+
+// -----------------------------------------------------------------------------
+// @brief  Set player name with the highest achieved score
+// @param  player name
+// -----------------------------------------------------------------------------
+void Game::setRecordPname(const std::string& name) {
+    this->record_pName = name;
+}
+
+
+/******************************************************************************/
+/*                        			GETTERS      		   	                  */
+/******************************************************************************/
+
+void Game::getCurrentScore(){
+	return this->current_score;
+}
+
+void Game::getRecordScore(void){
+	return this->record_score;
+}
+
+
+// -----------------------------------------------------------------------------
+// @brief  Terminate the game
+// @param
+// -----------------------------------------------------------------------------
+void Game::gameEnd() {
+    // TODO
+}
+
+// -----------------------------------------------------------------------------
+// @brief  Initialize the game
+// @param
+// -----------------------------------------------------------------------------
+void Game::gameBegin() {
+    // TODO
+}
