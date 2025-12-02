@@ -1,0 +1,40 @@
+/*
+ * GRID.hpp
+ *
+ *  Created on: Nov 30, 2025
+ *      Author: lucasnascimento
+ */
+
+#ifndef INC_GRID_GRID_HPP_
+#define INC_GRID_GRID_HPP_
+
+#include <cstdint>
+#include <vector>
+
+#define PANEL_W 48
+#define PANEL_H
+
+class GRID {
+	private:
+		uint8_t width;
+		uint8_t height;
+		uint8_t n_panels;
+
+		std::vector<std::vector<uint8_t>> panel_1;
+		std::vector<std::vector<uint8_t>> panel_2;
+		std::vector<std::vector<uint8_t>> panel_3;
+		std::vector<std::vector<uint8_t>> panel_4;
+
+	public:
+		GRID(uint8_t n);
+		void bufferRead();
+		void bufferWrite();
+		void displayGrid();
+
+
+};
+
+
+
+
+#endif /* INC_GRID_GRID_HPP_ */

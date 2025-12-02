@@ -1,0 +1,23 @@
+/*
+ * Print.cpp
+ *
+ *  Created on: Nov 29, 2025
+ *      Author: lucasnascimento
+ */
+
+
+#include "Print.hpp"
+
+
+
+PrintUart::PrintUart(UART_HandleTypeDef huart, uint8_t mode)
+:	huart(huart),
+	mode(mode)
+{
+	// Set Up printing based on mode configuration.
+}
+
+
+PrintUart::println(string st){
+	// Send data out
+}

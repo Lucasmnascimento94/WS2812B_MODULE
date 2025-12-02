@@ -13,8 +13,6 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 class Game {
 private:
     uint32_t current_score = 0;
@@ -25,10 +23,10 @@ private:
     std::vector<std::vector<uint8_t>> game_icon;
     bool newRecord = false;
 
-    void setGameIcon(const string& name);
+    void setGameIcon(std::string name);
 
 public:
-    explicit Game(string& name);
+    explicit Game(std::string name);
 
     /******************************************************************************/
     /*                        			SETTERS     		   	                  */
@@ -42,9 +40,9 @@ public:
     /******************************************************************************/
     uint32_t getCurrentScore(void);
 
-    uint32_t getRecordtScore(void);
+    uint32_t getRecordScore(void);
 
-    vector<vector<uint8_t>> getIcon(void){
+    std::vector<std::vector<uint8_t>> getIcon(void){
     	return this->game_icon;
     }
 

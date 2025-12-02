@@ -1,0 +1,49 @@
+/*
+ * print.hpp
+ *
+ *  Created on: Nov 29, 2025
+ *      Author: lucasnascimento
+ */
+
+#ifndef INC_PRINT_PRINT_HPP_
+#define INC_PRINT_PRINT_HPP_
+
+#include <string>
+#include <cstdint>
+#include "stm32h5xx_hal.h"
+
+enum class prinMode : uint8_t {
+	INTERRUPT = 0x01,
+	DMA = 0X02,
+	POL = 0X03
+};
+
+class Print {
+	private:
+
+	public:
+		virtual ~Print() = default;
+
+		virtual void println(std::string &str){}
+
+};
+
+
+class PrintSpi : public Print {
+
+	public:
+};
+
+class PrintUart : public Print {
+	private:
+		UART_HandleTypeDef *huart;
+		uint8_t mode;
+	public:
+		PrintUart(UART_HandleTypeDef *huart4, uint8_t mode);
+		void println(std::string &str) override;
+
+};
+
+
+
+#endif /* INC_PRINT_PRINT_HPP_ */

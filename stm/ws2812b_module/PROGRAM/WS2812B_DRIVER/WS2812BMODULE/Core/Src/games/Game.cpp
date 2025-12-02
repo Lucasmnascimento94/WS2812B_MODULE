@@ -5,15 +5,15 @@
  *      Author: lucasnascimento
  */
 
-
+#include <cstdint>
 #include "Game.hpp"
 #include "Records.hpp"
-using namespace std;
 
-Game::Game(string &name)
+Game::Game(std::string name)
 	:game_name(name)
 {
-
+	// Read current game's Record Score from flash
+	// Read Game Icon from flash and write it to Shared Memory
 }
 
 
@@ -25,7 +25,7 @@ Game::Game(string &name)
 // -----------------------------------------------------------------------------
 // @brief  Set current Score in the game
 // -----------------------------------------------------------------------------
-void Game::setCurrentScore(uin32_t score){
+void Game::setCurrentScore(uint32_t score){
     this->current_score = score;
     if (score > this->record_score) {
         setRecordScore(score);
@@ -54,11 +54,11 @@ void Game::setRecordPname(const std::string& name) {
 /*                        			GETTERS      		   	                  */
 /******************************************************************************/
 
-void Game::getCurrentScore(){
+uint32_t Game::getCurrentScore(){
 	return this->current_score;
 }
 
-void Game::getRecordScore(void){
+uint32_t Game::getRecordScore(void){
 	return this->record_score;
 }
 

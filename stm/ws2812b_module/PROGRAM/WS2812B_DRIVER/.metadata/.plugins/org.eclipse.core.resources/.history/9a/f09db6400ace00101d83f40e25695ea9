@@ -1,0 +1,16 @@
+/*
+ * GRID.cpp
+ *
+ *  Created on: Nov 30, 2025
+ *      Author: lucasnascimento
+ */
+
+
+#include "GRID.hpp"
+
+GRID::GRID(uint8_t n)
+:	n_panels(n)
+{
+	this->height = this->n_panels*PANEL_H
+	this->width = n*PANEL_W
+}

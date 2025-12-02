@@ -9,7 +9,9 @@
 #define INC_PLAYER_PLAYER_HPP_
 
 
+class Player {
 
+};
 
 
 #endif /* INC_PLAYER_PLAYER_HPP_ */

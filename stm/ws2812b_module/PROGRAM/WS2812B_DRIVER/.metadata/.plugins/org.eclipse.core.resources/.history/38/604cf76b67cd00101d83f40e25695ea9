@@ -1,0 +1,66 @@
+/*
+ * Snake.hpp
+ *
+ *  Created on: Nov 28, 2025
+ *      Author: lucasnascimento
+ */
+
+#ifndef INC_GAMES_SNAKE_SNAKE_HPP_
+#define INC_GAMES_SNAKE_SNAKE_HPP_
+
+#include <cstdint>
+#include "Game.hpp"
+#include "Player.hpp"
+#include <stack>
+
+using namespace std;
+
+
+enum codes {
+	PASS = 0X00,
+
+	HIT_BODY = 0X01,
+	HIT_WALL = 0X02,
+
+	FOOD_POISON = 0X03,
+	FOOD_BOOST = 0X04
+};
+
+
+class SnakeNode;
+class SnakeBody;
+class Snake : public Game{
+	private:
+		Player &player;
+
+	public:
+		explicit Snake(Player &player);
+		uint8_t ruleCheck(SnakeBody &snake);
+};
+
+
+class SnakeBody {
+	private:
+		uint16_t size;
+		SnakeNode &head;
+		SnakeNode &tail;
+
+	public:
+		uint16_t getSize();
+		SnakeNode &getHead();
+		SnakeNode &getTail();
+
+		void push(uint8_t i, uint8_t j);
+		SnakeNode &pop(uint8_t i, uint8_t j);
+};
+
+
+class SnakeNode {
+	public:
+		uint8_t i;
+		uint8_t j;
+		uint16_t pixel_addr;
+		SnakeNode &next;
+};
+
+#endif /* INC_GAMES_SNAKE_SNAKE_HPP_ */

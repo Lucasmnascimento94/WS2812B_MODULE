@@ -1,0 +1,30 @@
+/*
+ * Print.cpp
+ *
+ *  Created on: Nov 29, 2025
+ *      Author: lucasnascimento
+ */
+
+
+#include "Print.hpp"
+
+
+
+PrintUart::PrintUart(UART_HandleTypeDef huart, uint8_t mode)
+:	huart(huart),
+	mode(mode)
+{
+	// Set Up printing based on mode configuration.
+}
+
+
+void PrintUart::println(std::string str){
+	// Send data out
+
+	int len = str.size();
+
+	for (int i=0; i< len; i++){
+		HAL_UART_Transmit(uart, str[i],1,1000);
+	}
+	HAL_UART_Transmit(uart, "\n", 1, 1000);
+}

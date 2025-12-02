@@ -5,4 +5,12 @@
  *      Author: lucasnascimento
  */
 
+#include "Snake.hpp"
+
+Snake::Snake(Player *player)
+	: Game("snake"),	// extends
+	  player(player)
+{
+
+}
 

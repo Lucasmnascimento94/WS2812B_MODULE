@@ -1,0 +1,20 @@
+/*
+ * GRID.cpp
+ *
+ *  Created on: Nov 30, 2025
+ *      Author: lucasnascimento
+ */
+
+
+#include "GRID.hpp"
+#include "Print.hpp"
+#include <string>
+
+GRID::GRID()
+{
+	std::string msg = "Connected Panels: ";
+
+	msg.append(toString())
+	msg.push_back(busDetect());
+	println(msg);
+}

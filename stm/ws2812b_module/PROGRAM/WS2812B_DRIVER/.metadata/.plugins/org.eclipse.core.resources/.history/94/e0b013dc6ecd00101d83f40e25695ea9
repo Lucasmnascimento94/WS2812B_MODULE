@@ -1,0 +1,44 @@
+/*
+ * print.hpp
+ *
+ *  Created on: Nov 29, 2025
+ *      Author: lucasnascimento
+ */
+
+#ifndef INC_PRINT_PRINT_HPP_
+#define INC_PRINT_PRINT_HPP_
+
+#include <string>
+#include "stm32h5xx_hal.h"
+
+
+class Print {
+	private:
+
+	public:
+		void println(std::string str){
+
+		}
+
+};
+
+
+class PrintSpi : public Print {
+
+	public:
+};
+
+class PrintUart : public Print {
+
+
+	public:
+		PrintUart(UART_HandleTypeDef huart4);
+		void println(std::string str){
+
+		}
+
+};
+
+
+
+#endif /* INC_PRINT_PRINT_HPP_ */
