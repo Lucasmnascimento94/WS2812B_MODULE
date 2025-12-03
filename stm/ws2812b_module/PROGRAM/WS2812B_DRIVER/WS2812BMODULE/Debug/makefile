@@ -89,8 +89,8 @@ all: main-build
 main-build: WS2812BMODULE.elf secondary-outputs
 
 # Tool invocations
-WS2812BMODULE.elf WS2812BMODULE.map: $(OBJS) $(USER_OBJS) /home/lucasnascimento/Documents/STM32/WS2812B_DRIVER/WS2812BMODULE/STM32H563VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "WS2812BMODULE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m33 -T"/home/lucasnascimento/Documents/STM32/WS2812B_DRIVER/WS2812BMODULE/STM32H563VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="WS2812BMODULE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+WS2812BMODULE.elf WS2812BMODULE.map: $(OBJS) $(USER_OBJS) /Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/STM32H563VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "WS2812BMODULE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m33 -T"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/STM32H563VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="WS2812BMODULE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -108,7 +108,7 @@ int main(void)
 
   GRID grid{};
 
-  for(int i=0; i < 48; i++){
+  for(int i=0; i < 96; i++){
 	  //for(int j=0; j < 48; j++){
 		  grid.bufferWrite(0xff, 0x00, 0x00, 40, i);
 	  //}

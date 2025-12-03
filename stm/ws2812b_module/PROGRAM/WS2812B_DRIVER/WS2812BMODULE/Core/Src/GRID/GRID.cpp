@@ -11,6 +11,7 @@
 #include <array>
 #include <string>
 #include <cstdint>
+#include "main.h"
 
 
 GRID::GRID()
@@ -47,7 +48,8 @@ void GRID::bufferWrite(uint8_t g, uint8_t r, uint8_t b, uint8_t i, uint8_t j){
 	char str[100];
 
 	//println(s);
-	panelSelect(i, j);
+	panelEnable(panelSelect(i, j));
+
 	uint8_t bSelect = bitSelect(i);
 	uint8_t base = bSelect/16;
 	uint8_t word = base;
@@ -174,12 +176,41 @@ uint8_t GRID::panelSelect(uint8_t i, uint8_t j){
 
 void GRID::panelEnable(uint8_t panel_code){
 	switch (panel_code){
-		case panel_1_opcode: break;
-		case panel_2_opcode: break;
-		case panel_3_opcode: break;
-		case panel_4_opcode: break;
+		case panel_1_opcode: confPanel_1(); break;
+		case panel_2_opcode: confPanel_2(); break;
+		case panel_3_opcode: confPanel_3(); break;
+		case panel_4_opcode: confPanel_4(); break;
 	}
 }
+
+void GRID::confPanel_1(){
+	HAL_GPIO_WritePin(BUS_1_GPIO_Port, BUS_1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(BUS_2_GPIO_Port, BUS_2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_3_GPIO_Port, BUS_3_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_4_GPIO_Port, BUS_4_Pin, GPIO_PIN_SET);
+}
+
+void GRID::confPanel_2(){
+	HAL_GPIO_WritePin(BUS_1_GPIO_Port, BUS_1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_2_GPIO_Port, BUS_2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(BUS_3_GPIO_Port, BUS_3_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_4_GPIO_Port, BUS_4_Pin, GPIO_PIN_SET);
+}
+
+void GRID::confPanel_3(){
+	HAL_GPIO_WritePin(BUS_1_GPIO_Port, BUS_1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_2_GPIO_Port, BUS_2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_3_GPIO_Port, BUS_3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(BUS_4_GPIO_Port, BUS_4_Pin, GPIO_PIN_SET);
+}
+
+void GRID::confPanel_4(){
+	HAL_GPIO_WritePin(BUS_1_GPIO_Port, BUS_1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_2_GPIO_Port, BUS_2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_3_GPIO_Port, BUS_3_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_4_GPIO_Port, BUS_4_Pin, GPIO_PIN_RESET);
+}
+
 
 
 
