@@ -1,17 +1,21 @@
-17:30:42 **** Incremental Build of configuration Debug for project WS2812BMODULE ****
+16:57:10 **** Incremental Build of configuration Debug for project WS2812BMODULE ****
 make -j11 all 
-arm-none-eabi-g++ "../Core/Src/main.cpp" -mcpu=cortex-m33 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H563xx -c -I../Core/Inc -I../Drivers/STM32H5xx_HAL_Driver/Inc -I../Drivers/STM32H5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H5xx/Include -I../Drivers/CMSIS/Include -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/games" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/games/snake" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/player" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/records" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Src/games" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Src/games/snake" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/print" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Src/print" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Src/GRID" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/GRID" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-g++ "../Core/Src/GRID/GRID.cpp" -mcpu=cortex-m33 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32H563xx -c -I../Core/Inc -I../Drivers/STM32H5xx_HAL_Driver/Inc -I../Drivers/STM32H5xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H5xx/Include -I../Drivers/CMSIS/Include -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/games" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/games/snake" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/player" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/records" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Src/games" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Src/games/snake" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/print" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Src/print" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Src/GRID" -I"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/GRID" -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/GRID/GRID.d" -MT"Core/Src/GRID/GRID.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/GRID/GRID.o"
+../Core/Src/GRID/GRID.cpp: In member function 'void GRID::bufferWrite(uint8_t, uint8_t, uint8_t, uint8_t, uint8_t)':
+../Core/Src/GRID/GRID.cpp:48:14: warning: unused variable 'str' [-Wunused-variable]
+   48 |         char str[100];
+      |              ^~~
 arm-none-eabi-g++ -o "WS2812BMODULE.elf" @"objects.list"   -mcpu=cortex-m33 -T"/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE/STM32H563VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="WS2812BMODULE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 Finished building target: WS2812BMODULE.elf
  
 arm-none-eabi-size  WS2812BMODULE.elf 
 arm-none-eabi-objdump -h -S WS2812BMODULE.elf  > "WS2812BMODULE.list"
    text	   data	    bss	    dec	    hex	filename
-  46036	     92	   2316	  48444	   bd3c	WS2812BMODULE.elf
+  46936	     92	   2316	  49344	   c0c0	WS2812BMODULE.elf
 Finished building: default.size.stdout
  
 Finished building: WS2812BMODULE.list
  
 
-17:30:43 Build Finished. 0 errors, 0 warnings. (took 1s.265ms)
+16:57:11 Build Finished. 0 errors, 1 warnings. (took 1s.12ms)
 

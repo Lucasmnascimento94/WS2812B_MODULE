@@ -100,38 +100,98 @@ void GRID::printGrid(){
 	}
 }
 
+void GRID::writeBits(uint16_t word_0, uint16_t word_1, uint16_t word_2){
+	uint32_t hword = 0x00;
+	uint32_t lword = 0x00;
+	uint32_t data = 0x00;
 
+	// Drive Lines High
+	GPIOD->BSRR |= 0XFFFF; // <1111 1111 1111 1111> <0xFFFF>
+	GPIOA->BSRR |= 0x0C7C; // <0011 0000 1111 1000> <0x0C7C>
+	GPIOC->BSRR |= 0x0FF8; // <0000 1111 1111 1000> <0x0FF8>
+	GPIOB->BSRR |= 0xE03C; // <1110 0000 0011 1100>  <0xE03C>
+	GPIOE->BSRR |= 0x01FF; // <0000 0001 1111 1111> <0x01FF>
+
+	// INSERT A DELAY TO CALIBRATE TIMING.........
+	//HAL_Delay(1);
+	// sending data
+
+	data = ((uint32_t)word_0) | (~((uint32_t)word_0) & 0xFFFF0000);
+	GPIOD->BSRR =	data;
+
+	// REGISTER A BITs
+	lword = ((uint32_t)(0x03 << 14) & (uint32_t)word_1) >> 2;
+	hword = ((uint32_t)(0xFFFF) & (uint32_t)~lword) << 16;
+	data = hword | lword; // Store bit that will be flushed.
+
+
+	lword = ((uint32_t)(0x1F << 9) & (uint32_t)word_1) >> 6;
+	hword = ((uint32_t)(0xFFFF) & (uint32_t)~lword) << 16;
+	data |= hword | lword;
+	GPIOA->BSRR |= data;
+
+
+	lword = ((uint32_t)(0x1FF) & (uint32_t)word_1) << 3;
+	hword = ((uint32_t)(0xFFFF) & (uint32_t)~lword) << 16;
+	data = hword | lword; // Store bit that will be flushed.
+	GPIOC->BSRR |= data;
+
+
+	lword = ((uint32_t)(0x07 << 13) & (uint32_t)word_2);
+	hword = ((uint32_t)(0xFFFF) & (uint32_t)~lword) << 16;
+	data = hword | lword;
+
+	lword = ((uint32_t)(0x0F << 9) & (uint32_t)word_2) >> 9;
+	hword = ((uint32_t)(0xFFFF) & (uint32_t)~lword) << 16;
+	data |= hword | lword;
+	GPIOB->BSRR |= data;
+
+
+	lword = ((uint32_t)(0x1F) & (uint32_t)word_2);
+	hword = ((uint32_t)(0xFFFF) & (uint32_t)~lword) << 16;
+	data = hword | lword;
+	GPIOE->BSRR |= data;
+
+	//HAL_Delay(1);
+
+
+
+	//DRIVE LOW
+	GPIOD->BSRR |= ((uint32_t)0XFFFF) << 16; // <1111 1111 1111 1111> <0xFFFF>
+	GPIOA->BSRR |= ((uint32_t)0x0C7C) << 16; // <0011 0000 1111 1000> <0x0C7C>
+	GPIOC->BSRR |= ((uint32_t)0x0FF8) << 16; // <0000 1111 1111 1000> <0x0FF8>
+	GPIOB->BSRR |= ((uint32_t)0xE03C) << 16; // <1110 0000 0011 1100>  <0xE03C>
+	GPIOE->BSRR |= ((uint32_t)0x01FF) << 16; // <0000 0001 1111 1111> <0x01FF>
+	//HAL_Delay(1);
+}
+
+void GRID::writePanel(){
+	for(int i = 0; i< 48; i++){
+		for(int j = 0; j<24; j+=3){
+			writeBits((*this->panel)[i][j], (*this->panel)[i][j+1], (*this->panel)[i][j+2]);
+		}
+	}
+
+
+}
 void GRID::displayGrid(){
 	int i=0;
 	int j=0;
 
 	panelEnable(panelSelect(i, j));
-	for(; i< 48; i++){
-		for(; j<48; j++){
+	writePanel();
 
-		}
-	}
-
+	i+=48;
 	panelEnable(panelSelect(i, j));
-	for(; i< 48; i++){
-		for(; j<48; j++){
+	writePanel();
 
-		}
-	}
-
+	i=0; j+=48;
 	panelEnable(panelSelect(i, j));
-	for(; i< 48; i++){
-		for(; j<48; j++){
+	writePanel();
 
-		}
-	}
-
+	i+=48;
 	panelEnable(panelSelect(i, j));
-	for(; i< 48; i++){
-		for(; j<48; j++){
-
-		}
-	}
+	writePanel();
 
 }
 /******************************************************************************/
@@ -213,7 +273,44 @@ void GRID::confPanel_4(){
 
 
 
+/*
+ * PORT STRUCTURE FOR BURSTS:
+ * PORTA:: (-, -, 40, 39, -, -, -, -, 8, 7, 6, 5, 4, -, -, -) ->>>>>>>>>>>>>>>>>> 7 BITS <0011 0000 1111 1000>  <0x0C7C>
+ *
+ * PORTB:: (36, 35, 34, -, -, -, -, -, -, -, -, 24, 23, 22, 21) ->>>>>>>>>>>>>>>> 7 BITS <1110 0000 0011 1100>  <0xE03C>
+ *
+ * PORTC:: (-, -, -, -, 38, 37, 12, 11, 10, 9, 3, 2, 1, -, -, - ) ->>>>>>>>>>>>>> 9 BITS <0000 1111 1111 1000>  <0x0FF8>
+ *
+ * PORTD:: (41, 42, 43, 44, 45, 46, 47, 48, 20, 19, 18, 17, 16, 15, 14, 13) ->>>> 16 BITS
+ *
+ * PORTE:: (-, -, -, -, -, -, -, 33, 32, 31, 30, 29, 28, 27, 26, 25) ->>>>>>>>>>> 9 BITS <0000 0001 1111 1111> <0x01FF>
+ *
+ * EASY PATH:
+ *
+ * WORD_0 >>>>>>>>>>>> PORTD
+ * WORD_1 >>>>>>>>>>>> PORTA (FIRST 7) :::: PORTC (LAST 9)
+ * WORD_2 >>>>>>>>>>>> PORTB (FIRST 7) :::: PORTE (LAST 9)
+ *
+ * BUFFER ORGANIZATION
+ *
+ * MSB <<>>> LSB
+ *
+ * WORD_0
+ * [48, 47, 46, 45, 44, 43, 42, 41, 20, 19, 18, 17, 16, 15, 14, 13]
+ *
+ * WORD_1
+ * [(40, 39, 8, 7, 6, 5, 4), (38, 37, 12, 11, 10, 9, 3, 2, 1)]
+ *
+ * WORD_2
+ * [(36, 35, 34, 24, 23, 22, 21), (33, 32, 31, 30, 29, 28, 27, 26, 25)]
+ *
+ *
+ * TABLE ::  (25, 24, 23, 48, 47, 46, 45, 44, 22, 21, 20, 19, 16, 15, 14, 13, 12, 11, 10,  9, 41, 40, 39, 38, 34, 33, 32, 31, 30, 29, 28, 27, 26, 37, 36, 35, 18, 17, 43, 42, 1,  2,  3,  4,  5,  6,  7,  8)
+ */
 
+/*
+ * WORD 1 -> GPIOD;
+ */
 
 
 
