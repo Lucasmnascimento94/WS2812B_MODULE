@@ -17,12 +17,13 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <GRID.h>
+#include <Print.h>
 #include "main.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "Print.hpp"
-#include "GRID.hpp"
+#include "timers.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,6 +60,8 @@ static void MX_GPDMA1_Init(void);
 static void MX_GPIO_Init(void);
 static void MX_UART4_Init(void);
 static void MX_SPI1_Init(void);
+
+static inline void wait_ticks(uint32_t dt);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -104,33 +107,45 @@ int main(void)
   MX_UART4_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
+
+  MX_TIM2_Init();
+
+
   std::string msg = "hello world from stm";
 
-  GRID grid{};
+   GRID grid{};
 
-  for(int i=0; i < 48; i++){
-	  for(int j=0; j < 48; j++){
-		  grid.bufferWrite(0xff, 0xff, 0xff, j, i);
-	  }
-  }
+   for(int i=0; i < 10; i++){
+ 	  for(int j=0; j < 48; j++){
+ 		  grid.bufferWrite(0x00, 0x00, 0xff, j, i);
+ 	  }
+   }
 
-  grid.printGrid();
-  grid.displayGrid();
+   char c[200];
+   uint32_t hclk  = HAL_RCC_GetHCLKFreq();
+   uint32_t sys   = HAL_RCC_GetSysClockFreq();
+   uint32_t pclk1 = HAL_RCC_GetPCLK1Freq();
+   uint32_t pclk2 = HAL_RCC_GetPCLK2Freq();
+
+   sprintf(c, "clock:: hclk: %ld | sys: %ld | pclk1: %ld | pclk2: %ld", hclk, sys, pclk1, pclk2);
+   msg = c;
+   println(msg);
+
+   //grid.printGrid();
+   //grid.displayGrid();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
   while (1)
   {
-    /* USER CODE END WHILE */
-	  println(msg);
-		  //HAL_Delay(1000);
-		 // HAL_UART_Transmit(&huart4, (uint8_t *)"HELLO", 5, 100);
-	    HAL_Delay(1000);
-    /* USER CODE BEGIN 3 */
+	 //grid.displayGrid();
+	  //HAL_Delay(500);
   }
   /* USER CODE END 3 */
 }
+
 
 /**
   * @brief System Clock Configuration
@@ -150,18 +165,21 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_CSI;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI
+                              |RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSIDiv = RCC_HSI_DIV2;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
-  RCC_OscInitStruct.CSIState = RCC_CSI_ON;
-  RCC_OscInitStruct.CSICalibrationValue = RCC_CSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLL1_SOURCE_CSI;
-  RCC_OscInitStruct.PLL.PLLM = 1;
-  RCC_OscInitStruct.PLL.PLLN = 125;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLL1_SOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 2;
+  RCC_OscInitStruct.PLL.PLLN = 40;
   RCC_OscInitStruct.PLL.PLLP = 2;
-  RCC_OscInitStruct.PLL.PLLQ = 3;
+  RCC_OscInitStruct.PLL.PLLQ = 2;
   RCC_OscInitStruct.PLL.PLLR = 2;
-  RCC_OscInitStruct.PLL.PLLRGE = RCC_PLL1_VCIRANGE_2;
+  RCC_OscInitStruct.PLL.PLLRGE = RCC_PLL1_VCIRANGE_3;
   RCC_OscInitStruct.PLL.PLLVCOSEL = RCC_PLL1_VCORANGE_WIDE;
   RCC_OscInitStruct.PLL.PLLFRACN = 0;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -399,12 +417,8 @@ static void MX_GPIO_Init(void)
                           |burst_41_Pin|burst_42_Pin|burst_43_Pin|burst_44_Pin
                           |burst_45_Pin|burst_46_Pin|burst_47_Pin|burst_48_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : BUS_2_Pin BUS_3_Pin BUS_4_Pin burst_33_Pin
-                           burst_32_Pin burst_31_Pin burst_30_Pin burst_29_Pin
-                           burst_28_Pin burst_27_Pin burst_26_Pin burst_25_Pin */
-  GPIO_InitStruct.Pin = BUS_2_Pin|BUS_3_Pin|BUS_4_Pin|burst_33_Pin
-                          |burst_32_Pin|burst_31_Pin|burst_30_Pin|burst_29_Pin
-                          |burst_28_Pin|burst_27_Pin|burst_26_Pin|burst_25_Pin;
+  /*Configure GPIO pins : BUS_2_Pin BUS_3_Pin BUS_4_Pin */
+  GPIO_InitStruct.Pin = BUS_2_Pin|BUS_3_Pin|BUS_4_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -430,7 +444,7 @@ static void MX_GPIO_Init(void)
                           |burst_6_Pin|burst_5_Pin|burst_4_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : burst_38_Pin burst_37_Pin burst_12_Pin burst_11_Pin
@@ -441,24 +455,42 @@ static void MX_GPIO_Init(void)
                           |burst_1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : burst_36_Pin burst_35_Pin burst_34_Pin burst_24_Pin
-                           burst_23_Pin burst_22_Pin burst_21_Pin RTS_Pin
-                           SRAM_CS_Pin INT_Pin BUS_1_Pin */
+                           burst_21_Pin RTS_Pin SRAM_CS_Pin INT_Pin
+                           BUS_1_Pin */
   GPIO_InitStruct.Pin = burst_36_Pin|burst_35_Pin|burst_34_Pin|burst_24_Pin
-                          |burst_23_Pin|burst_22_Pin|burst_21_Pin|RTS_Pin
-                          |SRAM_CS_Pin|INT_Pin|BUS_1_Pin;
+                          |burst_21_Pin|RTS_Pin|SRAM_CS_Pin|INT_Pin
+                          |BUS_1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : burst_33_Pin burst_32_Pin burst_31_Pin burst_30_Pin
+                           burst_29_Pin burst_28_Pin burst_27_Pin burst_26_Pin
+                           burst_25_Pin */
+  GPIO_InitStruct.Pin = burst_33_Pin|burst_32_Pin|burst_31_Pin|burst_30_Pin
+                          |burst_29_Pin|burst_28_Pin|burst_27_Pin|burst_26_Pin
+                          |burst_25_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
   /*Configure GPIO pins : BUS_4_DETECT_Pin CTS_Pin */
-  GPIO_InitStruct.Pin = BUS_4_DETECT_Pin|CTS_Pin;
+ /* GPIO_InitStruct.Pin = BUS_4_DETECT_Pin|CTS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);*/
+
+  /*Configure GPIO pins : burst_23_Pin burst_22_Pin */
+  GPIO_InitStruct.Pin = burst_23_Pin|burst_22_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pins : burst_20_Pin burst_19_Pin burst_18_Pin burst_17_Pin
@@ -471,7 +503,7 @@ static void MX_GPIO_Init(void)
                           |burst_45_Pin|burst_46_Pin|burst_47_Pin|burst_48_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/

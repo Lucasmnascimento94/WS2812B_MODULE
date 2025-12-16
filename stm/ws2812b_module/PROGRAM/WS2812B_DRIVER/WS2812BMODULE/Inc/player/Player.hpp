@@ -1,0 +1,17 @@
+/*
+ * Player.hpp
+ *
+ *  Created on: Nov 28, 2025
+ *      Author: lucasnascimento
+ */
+
+#ifndef INC_PLAYER_PLAYER_HPP_
+#define INC_PLAYER_PLAYER_HPP_
+
+
+class Player {
+
+};
+
+
+#endif /* INC_PLAYER_PLAYER_HPP_ */

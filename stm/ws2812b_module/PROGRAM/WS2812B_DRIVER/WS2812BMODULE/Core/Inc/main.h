@@ -31,7 +31,10 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#define NOP4()   do { __NOP(); __NOP(); __NOP(); __NOP(); } while (0)
+#define NOP8()   do { NOP4(); NOP4(); } while (0)
+#define NOP16()  do { NOP8(); NOP8(); } while (0)
+#define NOP32()  do { NOP16(); NOP16(); } while (0)
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -188,8 +191,6 @@ void Error_Handler(void);
 #define burst_48_GPIO_Port GPIOD
 #define RTS_Pin GPIO_PIN_5
 #define RTS_GPIO_Port GPIOB
-#define CTS_Pin GPIO_PIN_6
-#define CTS_GPIO_Port GPIOB
 #define SRAM_CS_Pin GPIO_PIN_7
 #define SRAM_CS_GPIO_Port GPIOB
 #define INT_Pin GPIO_PIN_8

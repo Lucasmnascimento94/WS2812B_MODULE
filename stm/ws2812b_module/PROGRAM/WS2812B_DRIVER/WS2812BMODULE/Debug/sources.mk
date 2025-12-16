@@ -44,6 +44,7 @@ Core/Src/games/snake \
 Core/Src \
 Core/Src/print \
 Core/Src/records \
+Core/Src/timers \
 Core/Startup \
 Drivers/STM32H5xx_HAL_Driver/Src \
 

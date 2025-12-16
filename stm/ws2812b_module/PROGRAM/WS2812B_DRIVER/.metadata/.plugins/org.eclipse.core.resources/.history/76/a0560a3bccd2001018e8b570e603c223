@@ -1,0 +1,39 @@
+/*
+ * timers.hpp
+ *
+ *  Created on: Dec 6, 2025
+ *      Author: lucasnascimento
+ */
+
+#ifndef INC_TIMERS_TIMERS_H_
+#define INC_TIMERS_TIMERS_H_
+#include "main.h"
+
+extern TIM_HandleTypeDef htim1;
+extern TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim3;
+extern TIM_HandleTypeDef htim4;
+extern TIM_HandleTypeDef htim5;
+extern TIM_HandleTypeDef htim6;
+extern TIM_HandleTypeDef htim7;
+extern TIM_HandleTypeDef htim8;
+extern TIM_HandleTypeDef htim12;
+extern TIM_HandleTypeDef htim13;
+extern TIM_HandleTypeDef htim14;
+extern TIM_HandleTypeDef htim15;
+extern TIM_HandleTypeDef htim16;
+extern TIM_HandleTypeDef htim17;
+
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+void MX_TIM2_Init(void);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* INC_TIMERS_TIMERS_H_ */
