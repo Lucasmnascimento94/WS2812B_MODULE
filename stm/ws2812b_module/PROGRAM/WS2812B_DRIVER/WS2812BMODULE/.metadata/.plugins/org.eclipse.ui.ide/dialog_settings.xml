@@ -9,15 +9,16 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/lucasnascimento/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE"/>
 			<item value="/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER"/>
 			<item value="/Users/lucasnascimenti/Documents/GitHub/WS2812B_MODULE/stm/ws2812b_module/PROGRAM/WS2812B_DRIVER/WS2812BMODULE"/>
 		</list>
 		<section name="SmartImportWizard.dialogBounds">
 			<item key="DIALOG_X_ORIGIN" value="571"/>
 			<item key="DIALOG_Y_ORIGIN" value="292"/>
-			<item key="DIALOG_WIDTH" value="1080"/>
-			<item key="DIALOG_HEIGHT" value="568"/>
-			<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+			<item key="DIALOG_WIDTH" value="904"/>
+			<item key="DIALOG_HEIGHT" value="691"/>
+			<item key="DIALOG_FONT_NAME" value="1|Ubuntu Sans|11.0|0|GTK|1|"/>
 		</section>
 	</section>
 </section>
