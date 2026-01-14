@@ -1,0 +1,26 @@
+/*
+ * memory.hpp
+ *
+ *  Created on: Dec 25, 2025
+ *      Author: lucasnascimento
+ */
+
+#ifndef INC_MEMORY_MEMORY_HPP_
+#define INC_MEMORY_MEMORY_HPP_
+#define MAX 100000;
+
+struct Node {
+	uint8_t i;
+	uint8_t j;
+	uint8_t flag;
+	Node *next;
+};
+
+
+class Pool{
+	Node pool[MAX];
+};
+
+
+
+#endif /* INC_MEMORY_MEMORY_HPP_ */

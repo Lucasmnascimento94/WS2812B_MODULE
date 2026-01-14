@@ -1,0 +1,274 @@
+/*
+ * GRID.cpp
+ *
+ *  Created on: Nov 30, 2025
+ *      Author: lucasnascimento
+ */
+
+
+#include <GRID.hpp>
+
+#include "timers.h"
+#include "main.h"
+
+// Global buffer
+uint32_t panel_1A[8*3*48];
+uint32_t panel_1B[8*3*48];
+uint32_t panel_1C[8*3*48];
+uint32_t panel_1D[8*3*48];
+uint32_t panel_1E[8*3*48];
+
+uint32_t panel_2A[8*3*48];
+uint32_t panel_2B[8*3*48];
+uint32_t panel_2C[8*3*48];
+uint32_t panel_2D[8*3*48];
+uint32_t panel_2E[8*3*48];
+
+uint32_t panel_3A[8*3*48];
+uint32_t panel_3B[8*3*48];
+uint32_t panel_3C[8*3*48];
+uint32_t panel_3D[8*3*48];
+uint32_t panel_3E[8*3*48];
+
+uint32_t panel_4A[8*3*48];
+uint32_t panel_4B[8*3*48];
+uint32_t panel_4C[8*3*48];
+uint32_t panel_4D[8*3*48];
+uint32_t panel_4E[8*3*48];
+
+uint8_t ready = 1;
+
+static inline void wait_ticks(uint32_t dt)
+{
+    uint32_t start = TIM2->CNT;
+    while ((uint32_t)(TIM2->CNT - start) < dt) {
+        __NOP();
+    }
+}
+
+/******************************************************************************/
+/*                        			PUBLIC METHODS		   	                  */
+/******************************************************************************/
+
+GRID::GRID(){
+	this->clear();
+}
+/*
+ * Parameters: i->pixel position in the grid line. | j->pixel position in the grid column
+ */
+void GRID::clear(){
+	this->clearPanel(panel_1_opcode);
+	this->clearPanel(panel_2_opcode);
+	this->clearPanel(panel_3_opcode);
+	this->clearPanel(panel_4_opcode);
+}
+
+void GRID::clearPanel(uint8_t panel_opcode){
+	this->buffPortSelect(panel_opcode);
+	for(int i=0; i< SIZE; i++){
+		this->buffA[i] = GRID_MASK_PORTA << 16;
+		this->buffB[i] = GRID_MASK_PORTB << 16;
+		this->buffC[i] = GRID_MASK_PORTC << 16;
+		this->buffD[i] = GRID_MASK_PORTD << 16;
+		this->buffE[i] = GRID_MASK_PORTE << 16;
+	}
+}
+void GRID::pixelrWrite(uint8_t color[3], uint8_t i_, uint8_t j_){
+    // ... color setup ...
+    uint8_t local_i = i_ % 48;
+    uint8_t local_j = j_ % 48;
+
+    uint16_t index = local_j * 24; // Use literal 24 for stability
+    uint8_t bitSelect = toBit[local_i];
+
+    this->buffSelect(this->panelSelect(i_, j_), toPort[local_i]);
+
+    // Add this guard
+    if (index + 23 >= 1152) return;
+
+    // Use a single word update logic to be atomic
+    uint32_t set_mask = (1UL << bitSelect);
+    uint32_t rst_mask = (1UL << (bitSelect + 16));
+
+    for(int c=0; c<3; c++) {
+        for(int b=0; b<8; b++) {
+            if((color[c] >> b) & 0x01) {
+                this->buff[index] = (this->buff[index] | set_mask) & ~rst_mask;
+            } else {
+                this->buff[index] = (this->buff[index] & ~set_mask) | rst_mask;
+            }
+            index++;
+        }
+    }
+}
+void GRID::buffPortSelect(uint8_t panel_opcode){
+	switch (panel_opcode){
+		case panel_1_opcode:
+			this->buffA = panel_1A;
+			this->buffB = panel_1B;
+			this->buffC = panel_1C;
+			this->buffD = panel_1D;
+			this->buffE = panel_1E;
+			break;
+		case panel_2_opcode:
+			this->buffA = panel_2A;
+			this->buffB = panel_2B;
+			this->buffC = panel_2C;
+			this->buffD = panel_2D;
+			this->buffE = panel_2E;
+			break;
+		case panel_3_opcode:
+			this->buffA = panel_3A;
+			this->buffB = panel_3B;
+			this->buffC = panel_3C;
+			this->buffD = panel_3D;
+			this->buffE = panel_3E;
+			break;
+		case panel_4_opcode:
+			this->buffA = panel_4A;
+			this->buffB = panel_4B;
+			this->buffC = panel_4C;
+			this->buffD = panel_4D;
+			this->buffE = panel_4E;
+			break;
+	}
+}
+
+void GRID::display(){
+	while(!ready)
+	MX_TIM2_Init();
+	//wait_ticks(500);
+}
+
+void GRID::printGrid(uint8_t panel_opcode){
+	std::string line;
+	char c[100];
+	this->buffPortSelect(panel_opcode);
+
+	line = "\nRegister A:\n";
+	println(line);
+	for(int j=0; j<3*48; j++){
+		for(int i=0; i<8; i++){
+			sprintf(c, "%lX", this->buffA[i + j*8]);
+			line = c; line += ", ";
+			print(line);
+		}
+		line = "\n";
+		print(line);
+	}
+	line = "\n\nRegister B";
+	println(line);
+	for(int j=0; j<3*48; j++){
+		for(int i=0; i<8; i++){
+			sprintf(c, "%lX", this->buffB[i + j*8]);
+			line = c; line += ", ";
+			print(line);
+		}
+		line = "\n";
+		print(line);
+	}
+	line = "\n\nRegister C";
+	println(line);
+	for(int j=0; j<3*48; j++){
+		for(int i=0; i<8; i++){
+			sprintf(c, "%lX", this->buffC[i + j*8]);
+			line = c; line += ", ";
+			print(line);
+		}
+		line = "\n";
+		print(line);
+	}
+	line = "\n\nRegister D";
+	println(line);
+	for(int j=0; j<3*48; j++){
+		for(int i=0; i<8; i++){
+			sprintf(c, "%lX", this->buffD[i + j*8]);
+			line = c; line += ", ";
+			print(line);
+		}
+		line = "\n";
+		print(line);
+	}
+	line = "\n\nRegister E";
+	println(line);
+	for(int j=0; j<3*48; j++){
+		for(int i=0; i<8; i++){
+			sprintf(c, "%lX", this->buffE[i + j*8]);
+			line = c; line += ", ";
+			print(line);
+		}
+		line = "\n";
+		print(line);
+	}
+	println(line);
+
+}
+
+
+/******************************************************************************/
+/*                        			PRIVATE METHODS		   	                  */
+/******************************************************************************/
+
+uint8_t GRID::busDetect(){
+	if(HAL_GPIO_ReadPin(BUS_1_DETECT_GPIO_Port, BUS_1_DETECT_Pin)) this->n_panels++;
+	if(HAL_GPIO_ReadPin(BUS_2_DETECT_GPIO_Port, BUS_2_DETECT_Pin)) this->n_panels++;
+	if(HAL_GPIO_ReadPin(BUS_3_DETECT_GPIO_Port, BUS_3_DETECT_Pin)) this->n_panels++;
+	if(HAL_GPIO_ReadPin(BUS_4_DETECT_GPIO_Port, BUS_4_DETECT_Pin)) this->n_panels++;
+	return n_panels;
+}
+
+void GRID::buffSelect(uint8_t panel_opcode, uint8_t port){
+	if(port == portA){
+		this->mask = GRID_MASK_PORTA;
+		switch(panel_opcode){
+			case panel_1_opcode: this->buff = panel_1A; return;
+			case panel_2_opcode: this->buff = panel_2A; return;
+			case panel_3_opcode: this->buff = panel_3A; return;
+			default: this->buff = panel_4A; return;
+		}
+	} else if(port == portB){
+		this->mask = GRID_MASK_PORTB;
+		switch(panel_opcode){
+			case panel_1_opcode: this->buff = panel_1B; return;
+			case panel_2_opcode: this->buff = panel_2B; return;
+			case panel_3_opcode: this->buff = panel_3B; return;
+			default: this->buff = panel_4B; return;
+		}
+	} else if(port == portC){
+		this->mask = GRID_MASK_PORTC;
+		switch(panel_opcode){
+			case panel_1_opcode: this->buff = panel_1C; return;
+			case panel_2_opcode: this->buff = panel_2C; return;
+			case panel_3_opcode: this->buff = panel_3C; return;
+			default: this->buff = panel_4C; return;
+		}
+	} else if(port == portD){
+		this->mask = GRID_MASK_PORTD;
+		switch(panel_opcode){
+			case panel_1_opcode: this->buff = panel_1D; return;
+			case panel_2_opcode: this->buff = panel_2D; return;
+			case panel_3_opcode: this->buff = panel_3D; return;
+			default: this->buff = panel_4D; return;
+		}
+	} else if (port == portE){
+		this->mask = GRID_MASK_PORTE;
+		switch(panel_opcode){
+			case panel_1_opcode: this->buff = panel_1E; return;
+			case panel_2_opcode: this->buff = panel_2E; return;
+			case panel_3_opcode: this->buff = panel_3E; return;
+			default: this->buff = panel_4E; return;
+		}
+	}
+}
+
+uint8_t GRID::panelSelect(uint8_t i, uint8_t j){
+	uint8_t i_ = i/PANEL_W;
+	uint8_t j_ = j/PANEL_H;
+	return 0x00 | i_ | (j_ << 1); // Return panel opcode
+}
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+/*
+ * memory.cpp
+ *
+ *  Created on: Dec 25, 2025
+ *      Author: lucasnascimento
+ */
+
+#include "memory.hpp"
+#include <cstddef>
+
+Pool::Pool(){
+	for(uint32_t i = 0; i<MAX; i++){
+		this->pool[i].next = NULL;
+	}
+}
+
+
+uint8_t Pool::push(uint8_t i, uint8_t j){
+
+}
+
+uint8_t pop(){
+
+}

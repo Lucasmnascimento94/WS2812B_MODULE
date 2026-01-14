@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;WS2812BMODULE/Core/Inc/shared_memory&apos; to &apos;memory&apos;" description="Rename resource &apos;shared_memory&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/shared_memory" name="memory" stamp="1766683180365" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;WS2812BMODULE/Core/Src/shared_memory&apos; to &apos;memory&apos;" description="Rename resource &apos;shared_memory&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/shared_memory" name="memory" stamp="1766684253494" updateReferences="true"/>
+</session>

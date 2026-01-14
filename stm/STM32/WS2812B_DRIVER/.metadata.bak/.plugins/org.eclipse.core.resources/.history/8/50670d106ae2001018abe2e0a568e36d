@@ -1,0 +1,156 @@
+/*
+ * Snake.cpp
+ *
+ *  Created on: Nov 28, 2025
+ *      Author: lucasnascimento
+ */
+
+#include "Snake.hpp"
+
+
+Snake::Snake(Player *player): Game("snake"){
+	this->player = player;
+	this->direction = WALK_RIGHT;
+	this->push(24, 24);
+	this->push(25, 24);
+	this->push(26, 24);
+	this->push(27, 24);
+	this->push(28, 24);
+	this->push(29, 24);
+
+}
+
+
+
+
+
+uint8_t Snake::walk(){
+	std::string err="";
+	uint8_t err_code = 0;
+	uint8_t i = this->head->i;
+	uint8_t j = this->head->j;
+
+	// Get new promised position;
+	switch (direction){
+		case WALK_RIGHT: i++; break;
+		case WALK_LEFT: i--; break;
+		case WALK_UP: j++; break;
+		case WALK_DOWN: j--; break;
+	}
+
+	uint8_t flag = this->ruleCheck(i, j);
+	if(flag == END) this->gameEnd();
+	err_code = this->push(i, j);
+
+	std:string s = "here";
+	println(s);
+	if(err_code != NO_ERR){
+		err = "pushErr:" + std::to_string(err_code);
+		println(err);
+	}
+
+	if(flag != FOOD){
+		err_code = this->pop();
+		if(err_code != NO_ERR){
+			err = "popErr:" + std::to_string(err_code);
+			println(err);
+		}
+	}
+
+
+	return 0;
+}
+
+
+uint8_t Snake::ruleCheck(uint8_t i, uint8_t j){
+	uint8_t flag = map[i][j];
+
+	// Display Animation and return flag for ending game.
+	if(flag <= 0x02) {this->end_hitAction(); return END;}
+
+	if(flag >= FOOD && flag <= FOOD_MURF_SPEED){
+		switch (flag){
+			case FOOD: 				return FOOD;
+			case FOOD_POISON:  		this->end_poisonAction(); return END;
+			case FOOD_BOOST_SPEED:  case FOOD_MURF_SPEED: this->speedModify(flag); break;
+			case FOOD_DIVIDE: 		this->divide(); return FOOD;
+			case FOOD_EXPLODE: 		this->end_explodeAction(); return END;
+			case FOOD_BOOST_POINT:  this->pointModidy();  return FOOD;
+		}
+	}
+
+	return PASS;
+}
+
+
+
+// ACTIONS
+void Snake::end_explodeAction(){
+
+}
+
+void Snake::end_hitAction(){
+
+}
+
+void Snake::end_poisonAction(){
+
+}
+
+void Snake::divide(){
+
+}
+
+void Snake::pointModidy(){
+
+}
+
+void Snake::invisible(){
+
+}
+
+void Snake::speedModify(uint8_t flag){
+
+}
+
+
+uint8_t Snake::push(uint8_t i, uint8_t j){
+	uint8_t hi;
+	uint8_t hj;
+	if(this->mem.size != 0){
+		hi = this->head->i;
+		hj = this->head->j;
+	}
+
+	uint8_t flag = this->mem.push(i, j);
+
+
+	if(flag == NO_ERR){
+		this->head = &this->mem.pool[this->mem.top];
+		if(this->mem.size == 0){this->tail = this->head;}
+		else this->grid.pixelWrite(this->body_color, hi, hj);
+		this->grid.pixelWrite(this->head_color, i, j);
+		this->map[i][j] = BODY;
+	}
+	return flag;
+}
+
+uint8_t Snake::pop(){
+	if(this->mem.size == 0) return EMPTY_LIST;
+	uint8_t ti = this->tail->i;
+	uint8_t tj = this->tail->j;
+	uint8_t flag = this->mem.pop();
+
+	if(flag == NO_ERR){
+		this->tail = &this->mem.pool[this->mem.bot];
+		this->grid.pixelWrite(GRB_BLACK, ti, tj);
+		this->map[ti][tj] = VOID;
+	}
+	return flag;
+}
+
+
+
+
+
+

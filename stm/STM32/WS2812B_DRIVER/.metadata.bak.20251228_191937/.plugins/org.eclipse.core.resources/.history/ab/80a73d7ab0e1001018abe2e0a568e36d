@@ -1,0 +1,95 @@
+/*
+ * GRID.hpp
+ *
+ *  Created on: Nov 30, 2025
+ *      Author: lucasnascimento
+ */
+
+#ifndef INC_GRID_GRID_HPP_
+#define INC_GRID_GRID_HPP_
+#include "main.h"
+#include "stdint.h"
+#include "GRID_INTERFACE.h"
+#include <print.hpp>
+
+
+/*
+ * Translate from i,j to the actual connected PORT
+ */
+// i_ = 0..47  -> column = i_+1
+static const uint16_t toPort[48] = {
+    portC, portC, portC, portA, portA, portA, portA, portA,  //  1.. 8
+    portC, portC, portC, portC, portD, portD, portD, portD,  //  9..16
+    portD, portD, portD, portD, portB, portB, portB, portB,  // 17..24
+    portE, portE, portE, portE, portE, portE, portE, portE,  // 25..32
+    portE, portB, portB, portB, portC, portC, portA, portA,  // 33..40
+    portD, portD, portD, portD, portD, portD, portD, portD   // 41..48
+};
+
+static const uint16_t toBit[48] = {
+    // col:  1   2   3   4   5   6   7   8
+           12, 11, 10, 12, 11, 10,  9,  8,
+
+    // col:  9  10  11  12  13  14  15  16
+            9,  8,  7,  6, 15, 14, 13, 12,
+
+    // col: 17  18  19  20  21  22  23  24
+           11, 10,  9,  8, 15, 14, 13, 12,
+
+    // col: 25  26  27  28  29  30  31  32
+           15, 14, 13, 12, 11, 10,  9,  8,
+
+    // col: 33  34  35  36  37  38  39  40
+            7,  2,  1,  0,  5,  4,  3,  2,
+
+    // col: 41  42  43  44  45  46  47  48
+            0,  1,  2,  3,  4,  5,  6,  7
+};
+
+
+
+class GRID{
+public:
+
+	GRID();
+	void panelEnable(uint8_t panel_code);
+	void bufferRead();
+	void pixelrWrite(uint8_t color[3], uint8_t i, uint8_t j);
+	void printGrid(uint8_t panel_opcode);
+	void display();
+
+private:
+	uint8_t width = 0;
+	uint8_t height = 0;
+	uint8_t n_panels = 0;
+	uint32_t mask = 0;
+	volatile uint32_t *buff;
+	volatile uint32_t *buffA;
+	volatile uint32_t *buffB;
+	volatile uint32_t *buffC;
+	volatile uint32_t *buffD;
+	volatile uint32_t *buffE;
+
+	void clear();
+	void clearPanel(uint8_t panel_opcode);
+	uint8_t busDetect();
+	uint8_t busSelect(uint8_t i, uint8_t j);
+	uint8_t panelSelect(uint8_t i, uint8_t j);
+	void buffSelect(uint8_t panel_opcode, uint8_t port);
+	void buffPortSelect(uint8_t panel_opcode);
+	void writePanel();
+	void confPanel_1();
+	void confPanel_2();
+	void confPanel_3();
+	void confPanel_4();
+
+};
+
+
+
+
+
+
+
+
+#endif /* INC_GRID_GRID_HPP_ */

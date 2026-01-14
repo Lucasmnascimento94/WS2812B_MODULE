@@ -1,0 +1,183 @@
+/*
+ * GRID.hpp
+ *
+ *  Created on: Nov 30, 2025
+ *      Author: lucasnascimento
+ */
+
+#ifndef INC_GRID_GRID_HPP_
+#define INC_GRID_GRID_HPP_
+#include "main.h"
+#include "stdint.h"
+#include "GRID_INTERFACE.h"
+#include <print.hpp>
+
+
+
+class GRID{
+public:
+
+	GRID();
+	void panelEnable(uint8_t panel_code);
+	void bufferRead();
+	void pixelrWrite(uint8_t color[3], uint8_t i, uint8_t j);
+	void printGrid(uint8_t panel_opcode);
+	void display();
+
+private:
+	uint8_t width = 0;
+	uint8_t height = 0;
+	uint8_t n_panels = 0;
+	uint32_t mask = 0;
+	uint32_t *buff;
+	uint32_t *buffA;
+	uint32_t *buffB;
+	uint32_t *buffC;
+	uint32_t *buffD;
+	uint32_t *buffE;
+
+	void clear();
+	void clearPanel(uint8_t panel_opcode);
+	uint8_t busDetect();
+	uint8_t busSelect(uint8_t i, uint8_t j);
+	uint8_t panelSelect(uint8_t i, uint8_t j);
+	void buffSelect(uint8_t panel_opcode, uint8_t port);
+	void buffPortSelect(uint8_t panel_opcode);
+	void writePanel();
+	void confPanel_1();
+	void confPanel_2();
+	void confPanel_3();
+	void confPanel_4();
+
+};
+
+
+
+/*
+ * Translate from i,j to the actual connected PORT
+ */
+
+static const uint8_t toPort[48] = {
+    /*  0 */ portC,
+    /*  1 */ portC,
+    /*  2 */ portC,
+
+    /*  3 */ portA,
+    /*  4 */ portA,
+    /*  5 */ portA,
+    /*  6 */ portA,
+    /*  7 */ portA,
+
+    /*  8 */ portC,
+    /*  9 */ portC,
+    /* 10 */ portC,
+    /* 11 */ portC,
+
+    /* 12 */ portD,
+    /* 13 */ portD,
+    /* 14 */ portD,
+    /* 15 */ portD,
+    /* 16 */ portD,
+    /* 17 */ portD,
+    /* 18 */ portD,
+    /* 19 */ portD,
+    /* 20 */ portD,   // ✅ FIXED (this was wrong before)
+
+    /* 21 */ portB,
+    /* 22 */ portB,
+    /* 23 */ portB,
+    /* 24 */ portB,
+
+    /* 25 */ portE,
+    /* 26 */ portE,
+    /* 27 */ portE,
+    /* 28 */ portE,
+    /* 29 */ portE,
+    /* 30 */ portE,
+    /* 31 */ portE,
+    /* 32 */ portE,
+    /* 33 */ portE,
+
+    /* 34 */ portB,
+    /* 35 */ portB,
+    /* 36 */ portB,
+
+    /* 37 */ portC,
+    /* 38 */ portC,
+
+    /* 39 */ portA,
+    /* 40 */ portA,
+
+    /* 41 */ portD,
+    /* 42 */ portD,
+    /* 43 */ portD,
+    /* 44 */ portD,
+    /* 45 */ portD,
+    /* 46 */ portD,
+    /* 47 */ portD
+};
+
+
+static const uint8_t toBit[48] = {
+    /*  0 */ 12,
+    /*  1 */ 11,
+    /*  2 */ 10,
+
+    /*  3 */ 12,
+    /*  4 */ 11,
+    /*  5 */ 10,
+    /*  6 */  9,
+    /*  7 */  8,
+
+    /*  8 */  9,
+    /*  9 */  8,
+    /* 10 */  7,
+    /* 11 */  6,
+
+    /* 12 */ 15,
+    /* 13 */ 14,
+    /* 14 */ 13,
+    /* 15 */ 12,
+    /* 16 */ 11,
+    /* 17 */ 10,   // ✅ FIXED
+    /* 18 */  9,   // ✅ FIXED
+    /* 19 */  8,
+    /* 20 */  8,   // PORTD bit8 → line 20
+
+    /* 21 */ 15,
+    /* 22 */ 14,
+    /* 23 */ 13,
+    /* 24 */ 12,
+
+    /* 25 */ 15,
+    /* 26 */ 14,
+    /* 27 */ 13,
+    /* 28 */ 12,
+    /* 29 */ 11,
+    /* 30 */ 10,
+    /* 31 */  9,
+    /* 32 */  8,
+    /* 33 */  7,
+
+    /* 34 */  2,
+    /* 35 */  1,
+    /* 36 */  0,
+
+    /* 37 */  5,
+    /* 38 */  4,
+
+    /* 39 */  3,
+    /* 40 */  2,
+
+    /* 41 */  0,
+    /* 42 */  1,
+    /* 43 */  2,
+    /* 44 */  3,
+    /* 45 */  4,
+    /* 46 */  5,
+    /* 47 */  6
+};
+
+
+
+#endif /* INC_GRID_GRID_HPP_ */

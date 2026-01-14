@@ -1,0 +1,12 @@
+../Drivers/CMSIS/Include/core_cm33.h:2390:22:__NVIC_EnableIRQ	16	static,ignoring_inline_asm
+../Core/Src/timers/timers.c:38:6:MX_TIM2_Init	8	static,ignoring_inline_asm
+../Core/Src/timers/timers.c:53:6:TIM2_IRQHandler	8	static
+../Core/Src/timers/timers.c:85:20:registerA	24	static,ignoring_inline_asm
+../Core/Src/timers/timers.c:106:20:registerB	24	static,ignoring_inline_asm
+../Core/Src/timers/timers.c:127:20:registerC	24	static,ignoring_inline_asm
+../Core/Src/timers/timers.c:148:20:registerD	24	static,ignoring_inline_asm
+../Core/Src/timers/timers.c:170:20:registerE	24	static,ignoring_inline_asm
+../Core/Src/timers/timers.c:190:20:confPanel_1	8	static
+../Core/Src/timers/timers.c:197:20:confPanel_2	8	static
+../Core/Src/timers/timers.c:204:20:confPanel_3	8	static
+../Core/Src/timers/timers.c:211:20:confPanel_4	8	static

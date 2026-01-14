@@ -1,0 +1,88 @@
+/*
+ * Snake.hpp
+ *
+ *  Created on: Nov 28, 2025
+ *      Author: lucasnascimento
+ */
+
+#ifndef INC_GAMES_SNAKE_SNAKE_HPP_
+#define INC_GAMES_SNAKE_SNAKE_HPP_
+
+#include <cstdint>
+#include "Game.hpp"
+#include "Player.hpp"
+#include <stack>
+#include <vector>
+#include <random>
+#include <chrono>
+#include "font.h"
+#include "memory.hpp"
+using namespace std;
+
+
+enum Codes : uint8_t {
+	END = 0X00,
+	PASS = 0XFF,
+	HIT_BODY = 0X01,
+	HIT_WALL = 0X02,
+
+	FOOD = 0X03,
+	FOOD_POISON = 0X04,
+	FOOD_BOOST_SPEED = 0X05,
+	FOOD_DIVIDE = 0X06,
+	FOOD_EXPLODE = 0X07,
+	FOOD_BOOST_POINT = 0X08,
+	FOOD_MURF_SPEED = 0X09,
+
+	WALK_RIGHT = 0X05,
+	WALK_LEFT = 0X06,
+	WALK_UP = 0X07,
+	WALK_DOWN = 0X08,
+
+	BODY = 0X09,
+	VOID = 0X0F,
+
+};
+
+class Snake : public Game{
+private:
+	uint8_t map[96][96];
+	struct Node *head = NULL;
+	struct Node *tail = NULL;
+	uint32_t head_color = GRB_BLUE;
+	uint32_t body_color = GRB_RED;
+	uint32_t food_color = GRB_GREEN;
+	Player *player;
+	vector<Node> food;
+	Pool mem{};
+
+
+
+public:
+	uint8_t direction;
+	explicit Snake(Player *player);
+
+	uint8_t push(uint8_t i, uint8_t j);
+	uint8_t pop();
+
+	uint8_t ruleCheck(uint8_t i, uint8_t j);
+	uint8_t food_check(uint8_t flag);
+	uint8_t collision_check(Node *node);
+
+	uint16_t getSize();
+	Node *getHead();
+	Node *getTail();
+
+
+	uint8_t walk();
+	void end_explodeAction();
+	void end_poisonAction();
+	void end_hitAction();
+	void generateFood();
+	void divide();
+	void pointModidy();
+	void invisible();
+	void speedModify(uint8_t flag);
+};
+
+#endif /* INC_GAMES_SNAKE_SNAKE_HPP_ */

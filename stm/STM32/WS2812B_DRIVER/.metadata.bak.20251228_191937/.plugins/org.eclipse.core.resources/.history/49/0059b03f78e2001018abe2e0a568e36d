@@ -1,0 +1,158 @@
+/*
+ * font.h
+ *
+ * Created on: Dec 25, 2025
+ * Author: lucasnascimento
+ */
+
+#ifndef INC_FONTS_FONT_H_
+#define INC_FONTS_FONT_H_
+
+#include <stdint.h>
+
+// Format: 0x00GGRRBB (Green-Red-Blue)
+
+// ==========================================
+// 1. REDS (Green Low, Red High)
+// ==========================================
+#define GRB_RED             0x0000FF00
+#define GRB_CRIMSON         0x0014DC3C
+#define GRB_FIREBRICK       0x0022B222
+#define GRB_MAROON          0x00008000
+#define GRB_DARK_RED        0x00008B00
+#define GRB_TOMATO          0x0063FF47
+#define GRB_CORAL           0x007FFF50
+#define GRB_INDIAN_RED      0x005CCD5C
+#define GRB_LIGHT_CORAL     0x0080F080
+#define GRB_SALMON          0x0080FA72
+
+// ==========================================
+// 2. ORANGES (Green Med, Red High)
+// ==========================================
+#define GRB_ORANGE          0x00A5FF00
+#define GRB_DARK_ORANGE     0x008CFF00
+#define GRB_ORANGE_RED      0x0045FF00
+#define GRB_GOLD            0x00D7FF00
+#define GRB_GOLDENROD       0x00A5DA20
+#define GRB_DARK_GOLDENROD  0x0086B80B
+#define GRB_CHOCOLATE       0x0069D21E
+#define GRB_SADDLE_BROWN    0x00458B13
+#define GRB_SIENNA          0x0052A02D
+#define GRB_PERU            0x0085CD3F
+
+// ==========================================
+// 3. YELLOWS (Green High, Red High)
+// ==========================================
+#define GRB_YELLOW          0x00FFFF00
+#define GRB_LIGHT_YELLOW    0x00FFFFE0
+#define GRB_LEMON_CHIFFON   0x00FAFFCD
+#define GRB_PAPAYA_WHIP     0x00EFFF_D5
+#define GRB_MOCCASIN        0x00E4FFB5
+#define GRB_PEACH_PUFF      0x00DAFFB9
+#define GRB_PALE_GOLDENROD  0x00E8EEAA
+#define GRB_KHAKI           0x00E6F08C
+#define GRB_DARK_KHAKI      0x00B7BD6B
+#define GRB_CORN_SILK       0x00F8FFDC
+
+// ==========================================
+// 4. GREENS (Green High, Red Low)
+// ==========================================
+#define GRB_PURE_GREEN      0x00FF0000
+#define GRB_LIME            0x00FF0000
+#define GRB_LIME_GREEN      0x00CD3232
+#define GRB_PALE_GREEN      0x00FB9898
+#define GRB_LIGHT_GREEN     0x00EE9090
+#define GRB_FOREST_GREEN    0x008B2222
+#define GRB_DARK_GREEN      0x00640000
+#define GRB_GREEN_YELLOW    0x00FFAD2F
+#define GRB_CHARTREUSE      0x00FF7F00
+#define GRB_LAWN_GREEN      0x00FC7C00
+#define GRB_OLIVE           0x00808000
+#define GRB_OLIVE_DRAB      0x008E6B23
+#define GRB_SEA_GREEN       0x008B2E57
+#define GRB_MEDIUM_SEA_GREEN 0x00B33C71
+#define GRB_SPRING_GREEN    0x00FF007F
+#define GRB_MINT_CREAM      0x00FFF5FA
+
+// ==========================================
+// 5. CYANS & TEALS (Green High, Blue High)
+// ==========================================
+#define GRB_CYAN            0x00FF00FF
+#define GRB_AQUA            0x00FF00FF
+#define GRB_AQUAMARINE      0x00FF7FD4
+#define GRB_TURQUOISE       0x00E040D0
+#define GRB_MEDIUM_TURQUOISE 0x00D148CC
+#define GRB_DARK_TURQUOISE  0x00CE00D1
+#define GRB_LIGHT_SEA_GREEN 0x00B220AA
+#define GRB_TEAL            0x00800080
+#define GRB_DARK_CYAN       0x008B008B
+#define GRB_CADET_BLUE      0x009E5FA0
+
+// ==========================================
+// 6. BLUES (Green Low, Blue High)
+// ==========================================
+#define GRB_BLUE            0x000000FF
+#define GRB_MEDIUM_BLUE     0x000000CD
+#define GRB_DARK_BLUE       0x0000008B
+#define GRB_NAVY            0x00000080
+#define GRB_MIDNIGHT_BLUE   0x00191970
+#define GRB_ROYAL_BLUE      0x006941E1
+#define GRB_STEEL_BLUE      0x008246B4
+#define GRB_CORNFLOWER_BLUE 0x009564ED
+#define GRB_DODGER_BLUE     0x00901EFF
+#define GRB_DEEP_SKY_BLUE   0x00BF00FF
+#define GRB_LIGHT_SKY_BLUE  0x00CE87FA
+#define GRB_SKY_BLUE        0x00CE87EB
+#define GRB_LIGHT_BLUE      0x00D8ADE6
+#define GRB_POWDER_BLUE     0x00E0B0E6
+#define GRB_ALICE_BLUE      0x00F8F0FF
+
+// ==========================================
+// 7. PURPLES (Red High, Blue High)
+// ==========================================
+#define GRB_MAGENTA         0x0000FFFF
+#define GRB_FUCHSIA         0x0000FFFF
+#define GRB_DARK_MAGENTA    0x00008B8B
+#define GRB_PURPLE          0x00008080
+#define GRB_INDIGO          0x00004B82
+#define GRB_VIOLET          0x0082EEEE
+#define GRB_DARK_VIOLET     0x000094D3
+#define GRB_BLUE_VIOLET     0x002B8AE2
+#define GRB_MEDIUM_PURPLE   0x007093DB
+#define GRB_SLATE_BLUE      0x005A6ACD
+#define GRB_DARK_SLATE_BLUE 0x003D488B
+#define GRB_LAVENDER        0x00E6E6FA
+#define GRB_THISTLE         0x00BFD8D8
+#define GRB_PLUM            0x00A0DDDD
+#define GRB_ORCHID          0x0070DAD6
+
+// ==========================================
+// 8. PINKS (Red High, Blue Med, Green Low)
+// ==========================================
+#define GRB_PINK            0x00C0FFCB
+#define GRB_LIGHT_PINK      0x00B6FFC1
+#define GRB_HOT_PINK        0x0069FFB4
+#define GRB_DEEP_PINK       0x0014FF93
+#define GRB_PALE_VIOLET_RED 0x0070DB93
+#define GRB_MEDIUM_VIOLET_RED 0x0015C785
+
+// ==========================================
+// 9. WHITES & GRAYS
+// ==========================================
+#define GRB_WHITE           0x00FFFFFF
+#define GRB_SNOW            0x00FAFFFA
+#define GRB_HONEYDEW        0x00FFF0F0
+#define GRB_AZURE           0x00FFF0FF
+#define GRB_GHOST_WHITE     0x00F8F8FF
+#define GRB_WHITE_SMOKE     0x00F5F5F5
+#define GRB_BEIGE           0x00F5F5DC
+#define GRB_OLD_LACE        0x00F5FDE6
+#define GRB_FLORAL_WHITE    0x00FAFFF0
+#define GRB_SILVER          0x00C0C0C0
+#define GRB_DARK_GRAY       0x00A9A9A9
+#define GRB_GRAY            0x00808080
+#define GRB_DIM_GRAY        0x00696969
+#define GRB_SLATE_GRAY      0x00807090
+#define GRB_BLACK           0x00000000
+
+#endif /* INC_FONTS_FONT_H_ */

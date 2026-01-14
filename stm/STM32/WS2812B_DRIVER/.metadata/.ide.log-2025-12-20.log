@@ -1,0 +1,992 @@
+2025-12-20 09:28:46,149 [INFO] WebApp:194 - Connection lost
+2025-12-20 09:28:46,275 [INFO] WebApp:191 - Connection restablished
+2025-12-20 09:28:50,007 [INFO] WebApp:194 - Connection lost
+2025-12-20 09:28:50,110 [INFO] WebApp:191 - Connection restablished
+2025-12-20 10:48:09,502 [INFO] MainUpdater:2872 - connection check result : 10
+2025-12-20 10:48:09,502 [INFO] MainUpdater:2872 - connection check result : 10
+2025-12-20 10:48:09,553 [INFO] MicroXplorer:468 - Change Database Path : 
+2025-12-20 10:48:09,553 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.150
+2025-12-20 10:48:09,575 [INFO] ProjectChoiceTab:3673 - Project Structure = Dual Non Secure / Secure
+2025-12-20 10:48:09,576 [ERROR] ProjectManagerView:395 - 
+java.lang.NullPointerException: Cannot invoke "javax.swing.JTextField.getText()" because the return value of "java.util.List.get(int)" is null
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab$9.caretUpdate(ProjectChoiceTab.java:2706) ~[filemanager.jar:?]
+	at javax.swing.text.JTextComponent.fireCaretUpdate(JTextComponent.java:408) ~[?:?]
+	at javax.swing.text.JTextComponent$MutableCaretEvent.fire(JTextComponent.java:4484) ~[?:?]
+	at javax.swing.text.JTextComponent$MutableCaretEvent.stateChanged(JTextComponent.java:4506) ~[?:?]
+	at javax.swing.text.DefaultCaret.fireStateChanged(DefaultCaret.java:857) ~[?:?]
+	at javax.swing.text.DefaultCaret.changeCaretPosition(DefaultCaret.java:1343) ~[?:?]
+	at javax.swing.text.DefaultCaret.handleSetDot(DefaultCaret.java:1242) ~[?:?]
+	at javax.swing.text.DefaultCaret.setDot(DefaultCaret.java:1223) ~[?:?]
+	at javax.swing.text.DefaultCaret$Handler.insertUpdate(DefaultCaret.java:1819) ~[?:?]
+	at javax.swing.text.AbstractDocument.fireInsertUpdate(AbstractDocument.java:227) ~[?:?]
+	at javax.swing.text.AbstractDocument.handleInsertString(AbstractDocument.java:781) ~[?:?]
+	at javax.swing.text.AbstractDocument.insertString(AbstractDocument.java:740) ~[?:?]
+	at javax.swing.text.PlainDocument.insertString(PlainDocument.java:131) ~[?:?]
+	at javax.swing.text.AbstractDocument.replace(AbstractDocument.java:699) ~[?:?]
+	at javax.swing.text.JTextComponent.setText(JTextComponent.java:1725) ~[?:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.createHeapStackFields(ProjectChoiceTab.java:993) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.buildLinkSettingsPanel(ProjectChoiceTab.java:3813) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.defineWindowsFields(ProjectChoiceTab.java:1987) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectChoiceTab.updateSettings(ProjectChoiceTab.java:558) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.gui.ProjectSettingsPanel.UpdateDialog(ProjectSettingsPanel.java:247) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.projectmanager.ProjectManagerView.propertyChange(ProjectManagerView.java:392) ~[filemanager.jar:?]
+	at java.beans.PropertyChangeSupport.fire(PropertyChangeSupport.java:343) ~[?:?]
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:335) ~[?:?]
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:268) ~[?:?]
+	at com.st.microxplorer.util.MXPropertyChangeSupport.firePropertyChange(MXPropertyChangeSupport.java:54) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.mxsystem.MxSystem.closeConfig(MxSystem.java:899) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.maingui.MainPanel.closeConfig(MainPanel.java:792) ~[STM32CubeMX.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.OpenFileManager.loadConfigurationFile(OpenFileManager.java:288) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.MainFileManager.userLoadConfig(MainFileManager.java:364) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.engine.MainFileManager.userLoadConfig(MainFileManager.java:342) ~[filemanager.jar:?]
+	at com.st.microxplorer.plugins.filemanager.FileManagerView.getSpecificTask(FileManagerView.java:264) ~[filemanager.jar:?]
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor.getMxTabbedPaneInstance(CubeMxEditor.java:1198) ~[com.st.stm32cube.common.mx_6.15.0.202507011659/:?]
+	at com.st.stm32cube.common.mx.editor.CubeMxEditor$12$1.createSwingComponent(CubeMxEditor.java:1068) ~[com.st.stm32cube.common.mx_6.15.0.202507011659/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.EmbeddedSwingComposite.doComponentCreation(EmbeddedSwingComposite.java:492) ~[com.st.stm32cube.common.mx.oss_6.15.0.202507011659/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.EmbeddedSwingComposite$4.run(EmbeddedSwingComposite.java:291) ~[com.st.stm32cube.common.mx.oss_6.15.0.202507011659/:?]
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.AwtEnvironment$2.run(AwtEnvironment.java:166) ~[com.st.stm32cube.common.mx.oss_6.15.0.202507011659/:?]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318) ~[?:?]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:720) ~[?:?]
+	at java.awt.EventQueue$4.run(EventQueue.java:714) ~[?:?]
+	at java.security.AccessController.doPrivileged(AccessController.java:400) ~[?:?]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87) ~[?:?]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:742) ~[?:?]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109) ~[?:?]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) ~[?:?]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:90) ~[?:?]
+2025-12-20 10:48:09,577 [WARN] ThirdParty:871 - waiting for thirdparty lock release [close project]
+2025-12-20 10:48:09,577 [INFO] ThirdParty:873 - entering critical section [close project]
+2025-12-20 10:48:09,577 [INFO] ThirdParty:883 - exiting critical section [close project]
+2025-12-20 10:48:09,580 [INFO] PinOutPanel:1589 - setPackage(No Configuration,No Configuration)
+2025-12-20 10:48:09,588 [INFO] UtilMem:75 - Begin LoadConfig() Used Memory: 508160728 Bytes (1073741824)
+2025-12-20 10:48:09,590 [INFO] MicroXplorer:468 - Change Database Path : 
+2025-12-20 10:48:09,591 [INFO] MicroXplorer:498 - Change Database Version : DB.6.0.150
+2025-12-20 10:48:09,591 [INFO] OpenFileManager:355 - Change cursor
+2025-12-20 10:48:09,607 [INFO] Mcu:2029 - Initializing MCU STM32H563VGTx STM32H563VGTx STM32H563VGT6
+2025-12-20 10:48:10,113 [WARN] Context:803 - Trying to add IP SBS in context CortexM33 not assigned to a contextSplit
+2025-12-20 10:48:11,237 [WARN] Context:803 - Trying to add IP BOOTPATH in context CortexM33 not assigned to a contextSplit
+2025-12-20 10:48:11,245 [INFO] Context:786 - Trying to add GPIOservice into a context  which must be forbidden
+2025-12-20 10:48:11,245 [INFO] Context:786 - Trying to add GPIOservice into a context  which must be forbidden
+2025-12-20 10:48:11,246 [INFO] Context:786 - Trying to add GPIOservice into a context  which must be forbidden
+2025-12-20 10:48:11,246 [WARN] Context:803 - Trying to add IP GPIO in context CortexM33 not assigned to a contextSplit
+2025-12-20 10:48:11,920 [INFO] ImportTextPane:234 - (OptionalMessage_ERROR) Pin102 (VP_RIF_VS_RIF1) cannot be retrieved for this MCU
+2025-12-20 10:48:11,977 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,977 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,977 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelIntegratedComponent:63 - No mode defined for component null
+2025-12-20 10:48:11,978 [WARN] ModelPack:524 - Component already loaded: STMicroelectronics:HAL Drivers:0.0.0:STMicroelectronics:Device:STMicro_Driver:XSPI:HAL::0.0.1:HAL_XSPI
+2025-12-20 10:48:11,979 [INFO] RtosManager:558 - Registered RTOS mode: class=RTOS, group=ThreadX, mode=Core, owner=THREADX
+2025-12-20 10:48:12,017 [INFO] ThirdPartyModel:298 - Start build external matchings
+2025-12-20 10:48:12,203 [INFO] ThirdPartyModel:316 - End build external matchings
+2025-12-20 10:48:12,211 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,212 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,212 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,212 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,212 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,212 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,212 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,214 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,214 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,214 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,215 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,215 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,215 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,215 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,216 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,216 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,216 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,217 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,217 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,217 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,217 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,218 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,219 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,219 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,219 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,219 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,220 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,220 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,222 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,222 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,222 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,223 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,223 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,224 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,224 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,225 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,225 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,225 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,226 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,226 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,226 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,226 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,227 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,228 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,228 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,228 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,228 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,228 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,228 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,230 [INFO] ImportTextPane:234 - (OptionalMessage_ERROR) IP (BOOTPATH) : Invalid parameter (BootPathName)
+2025-12-20 10:48:12,231 [INFO] ImportTextPane:234 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (EPOD_VALUE)
+2025-12-20 10:48:12,231 [INFO] ImportTextPane:234 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (FamilyName)
+2025-12-20 10:48:12,231 [INFO] ImportTextPane:234 - (OptionalMessage_ERROR) IP (RCC) : Invalid parameter (LSIRC_VALUE)
+2025-12-20 10:48:12,233 [INFO] ImportTextPane:234 - (OptionalMessage_ERROR) IP (RCC) : Parameter (SAI1Freq_Value) has invalid value (806250000)
+2025-12-20 10:48:12,233 [INFO] ImportTextPane:234 - (OptionalMessage_ERROR) IP (RCC) : Parameter (SAI2Freq_Value) has invalid value (806250000)
+2025-12-20 10:48:12,233 [INFO] ImportTextPane:234 - (OptionalMessage_ERROR) IP (RCC) : Parameter (SPI2Freq_Value) has invalid value (250000000)
+2025-12-20 10:48:12,233 [INFO] ImportTextPane:234 - (OptionalMessage_ERROR) IP (RCC) : Parameter (SPI3Freq_Value) has invalid value (250000000)
+2025-12-20 10:48:12,233 [INFO] ImportTextPane:234 - (OptionalMessage_ERROR) IP (RCC) : Parameter (SPI4Freq_Value) has invalid value (250000000)
+2025-12-20 10:48:12,233 [INFO] ImportTextPane:234 - (OptionalMessage_ERROR) IP (RCC) : Parameter (SPI6Freq_Value) has invalid value (250000000)
+2025-12-20 10:48:12,379 [INFO] UtilMem:75 - End LoadConfig() Used Memory: 799520568 Bytes (1073741824)
+2025-12-20 10:48:12,418 [WARN] ThirdParty:833 - waiting for thirdparty lock release [change project]
+2025-12-20 10:48:12,418 [INFO] ThirdParty:835 - entering critical section [change project]
+2025-12-20 10:48:12,418 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-PM33A1 1.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USBPD 4.1
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC9 1.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 2.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENVWB1 1.4.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F4 1.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics LIBJPEG 8.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-ASTRA1 2.0.2
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSL 5.8.2
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE1 7.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SMBUS 2.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfMQTT 1.19.2
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 3.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ISPU 2.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.4.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-EEPRMA1 5.2.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-IPS 3.2.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLEMGR 4.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WB 2.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC12 1.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-F7 1.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L5 2.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 2.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC6 3.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ST67W61 1.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Cesanta I-CUBE-Mongoose 7.19.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :quantropi X-CUBE-qispace-sdk-base 2.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 12.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-MOTENV1 5.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FreeRTOS 0.0.1
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G0 1.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC4 3.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SUBG2 5.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7RS 1.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics STM32_WPAN 1.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :EmbeddedOffice I-CUBE-FS-RTOS 1.0.1
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.0.3
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :WES I-CUBE-Cesium 1.4.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_HOST 1.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Infineon AIROC-Wi-Fi-Bluetooth-STM32 1.7.1
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-G4 2.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-WB05N 2.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.3.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfTPM 3.8.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7 3.4.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DISPLAY 3.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :wolfSSL I-CUBE-wolfSSH 1.4.20
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC7 2.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TCPP 4.2.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :RealThread X-CUBE-RT-Thread_Nano 4.1.1
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-ATR-SIGFOX1 3.2.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-NFC10 1.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-FREERTOS 1.3.1
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics HAL Drivers 0.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.16.2
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ST60 1.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALS 1.0.2
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :emotas I-CUBE-CANOPEN 1.3.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics MBEDTLS 2.14.1
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-GNSS1 7.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :ITTIA_DB I-CUBE-ITTIADB 8.9.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOUCHGFX 4.26.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-STSE01 1.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-STBOX1 2.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AI 10.2.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-STAIOTCFT 1.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 1.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-SMARTAG2 1.2.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics FP-SNS-FLIGHT1 5.1.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-WL 2.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :SEGGER I-CUBE-embOS 1.3.1
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-ALGOBUILD 1.4.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-DPower 1.3.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-MEMS1 11.3.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics USB_DEVICE 1.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-H7RS 1.2.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-AZRTOS-L4 2.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics ThreadX 0.0.2
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics lwIP 2.1.2
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-SFXS2LP1 4.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-BLE2 3.3.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :Avnet-IOTCONNECT X-CUBE-iotc-st67-sdk 1.0.0
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics X-CUBE-TOF1 3.4.3
+2025-12-20 10:48:12,420 [INFO] ThirdParty:1030 - CMSIS Pack Vendor :STMicroelectronics PDM2PCM 3.2.0
+2025-12-20 10:48:12,421 [INFO] ThirdParty:841 - exiting critical section [change project]
+2025-12-20 10:48:12,810 [INFO] PinOutPanel:1589 - setPackage(No Configuration,No Configuration)
+2025-12-20 10:48:12,810 [INFO] PinOutPanel:1589 - setPackage(STM32H563VGTx,LQFP100)
+2025-12-20 10:48:12,869 [WARN] IP:2250 - rccPrivilegeSecure not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:12,869 [WARN] IP:2250 - rccSecurity not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,088 [WARN] IP:2250 - rccPrivilegeSecure not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,088 [WARN] IP:2250 - rccSecurity not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,258 [WARN] IP:2250 - rccPrivilegeSecure not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,258 [WARN] IP:2250 - rccSecurity not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,266 [INFO] UtilMem:75 - Before build in PCC Used Memory: 722010592 Bytes (1073741824)
+2025-12-20 10:48:13,496 [INFO] UtilMem:75 - After build in PCC Used Memory: 919142880 Bytes (1073741824)
+2025-12-20 10:48:13,512 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,512 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,512 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,512 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,512 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,512 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,512 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,512 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,512 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,512 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,512 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,513 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,513 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,513 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,513 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,513 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,513 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,513 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,513 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,513 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,513 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,514 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,514 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,514 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,514 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,514 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,514 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,514 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,514 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,514 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,514 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,514 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,514 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,514 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,514 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,515 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,515 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,515 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,515 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,515 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,515 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,515 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,515 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,515 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,515 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,515 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,515 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,516 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,516 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,516 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,516 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,516 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,516 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,516 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,516 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,516 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,516 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,517 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,517 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,517 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,517 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,517 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,517 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,517 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,517 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,517 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,517 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,517 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,517 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,517 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,517 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,518 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,518 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,518 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,518 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,518 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,518 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,518 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,518 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,518 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,518 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,518 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,518 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,518 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,518 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,519 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,519 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,519 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,519 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,519 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,519 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,520 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,520 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,520 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,520 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,520 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,520 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,520 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,521 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,521 [INFO] IPUIPlugin:80 - create IPUIPlugin
+2025-12-20 10:48:13,531 [INFO] ProjectChoiceTab:3673 - Project Structure = Dual Non Secure / Secure
+2025-12-20 10:48:13,609 [INFO] CADModel:165 - CPN selected for project levelSTM32H563VGT6
+2025-12-20 10:48:13,609 [INFO] CADModel:114 - Register for checkConnection events
+2025-12-20 10:48:13,656 [INFO] OpenFileManager:386 - Restore cursor
+2025-12-20 10:48:13,730 [WARN] IP:2250 - DATAEXCHANGEDESRCBYTE_GPDMACH5 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,730 [WARN] IP:2250 - DATAEXCHANGEDESTHALFWORD_GPDMACH5 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,787 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,788 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,788 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,788 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,788 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,788 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,788 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,791 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,792 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,792 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,792 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,792 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,792 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,792 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,792 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,792 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,792 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,792 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,793 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - pwrPrivilegeSecure not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - pwrPrivilegeNSecure not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP1 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP2 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP3 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP4 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP5 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP6 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP7 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP8 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_LPM not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_VB not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_IO not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_SCM not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_VUSB not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - pwrPrivilegeSecure not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - pwrPrivilegeNSecure not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP1 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP2 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP3 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP4 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP5 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP6 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP7 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_WKUP8 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_LPM not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_VB not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_IO not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_SCM not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PWR_VUSB not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,794 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,796 [WARN] IP:2250 - rccPrivilegeSecure not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,796 [WARN] IP:2250 - rccSecurity not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,803 [WARN] IP:2250 - rccPrivilegeSecure not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,803 [WARN] IP:2250 - rccSecurity not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,811 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,811 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,811 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,811 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,811 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,811 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,811 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,813 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,813 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,813 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,813 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,813 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,813 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,813 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,820 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,820 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,820 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,820 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,820 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,820 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,820 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,822 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,822 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,822 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,823 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,823 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,823 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,823 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,830 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,831 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,831 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,831 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,831 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,831 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,831 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,832 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,832 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,832 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,832 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,833 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,833 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,833 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,840 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,840 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,840 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,840 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,840 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,840 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,840 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,842 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,842 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,842 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,842 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,842 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,842 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,842 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,849 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,849 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,849 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,849 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,849 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,849 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,849 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,850 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,850 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,851 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,851 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,851 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,851 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,851 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,858 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,858 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,858 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,858 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,858 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,858 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,858 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,860 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,860 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,860 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,860 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,860 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,860 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,860 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,867 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,867 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,867 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,867 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,867 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,867 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,868 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,869 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,869 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,869 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,869 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,869 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,869 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,869 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,870 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,870 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,870 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,870 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,870 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,870 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,870 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,873 [WARN] IP:2250 - DATAEXCHANGEDESRCBYTE_GPDMACH5 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,873 [WARN] IP:2250 - DATAEXCHANGEDESTHALFWORD_GPDMACH5 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,877 [WARN] IP:2250 - DATAEXCHANGEDESRCBYTE_GPDMACH5 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,877 [WARN] IP:2250 - DATAEXCHANGEDESTHALFWORD_GPDMACH5 not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,881 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,881 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,881 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,881 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,881 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,881 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,881 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,894 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,894 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,894 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,894 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,895 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,895 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,895 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,901 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,901 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,901 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,901 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,901 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,902 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,902 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,903 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,903 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,903 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,903 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,903 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,903 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,903 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,910 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,910 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,910 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,910 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,910 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,910 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,910 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,911 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,911 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,911 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,911 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,911 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,911 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,911 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,917 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,917 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,917 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,917 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,917 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,918 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,918 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,919 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,919 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,919 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,919 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,919 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,919 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,919 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,925 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,925 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,925 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,925 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,925 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,925 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,925 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,926 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,926 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,927 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,927 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,927 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,927 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,927 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,933 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,933 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,933 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,933 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,933 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,933 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,933 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,934 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,934 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,934 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,934 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,934 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,935 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,935 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,941 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,941 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,941 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,941 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,941 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,941 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,941 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,942 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,942 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,942 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,942 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,942 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,942 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,942 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,948 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,948 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,948 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,948 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,948 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,949 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,949 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,950 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,950 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,950 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,950 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,950 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,950 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,950 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,951 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,951 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,952 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,952 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,952 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,952 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,952 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,952 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,952 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,952 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,952 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,952 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,953 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,953 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,954 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,954 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,954 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,954 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,954 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,955 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,955 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,961 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,961 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,961 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,961 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,961 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,962 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,962 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,963 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,963 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,963 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,963 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,963 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,963 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,963 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,964 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,965 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,965 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,965 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,965 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,965 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,965 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,966 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,966 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,966 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,966 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,966 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,966 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,966 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,966 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,966 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,967 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,967 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,967 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,967 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,967 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,967 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,968 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,968 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,968 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,968 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,968 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,968 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,968 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,968 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,969 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,970 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,971 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,972 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,972 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,972 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,972 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,972 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,972 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,972 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,972 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,972 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,972 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,972 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,972 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,972 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,972 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,973 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,974 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,975 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,975 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,975 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,975 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,975 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,975 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:13,975 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,464 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,464 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,465 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,465 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,465 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,465 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,465 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,465 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,465 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,465 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,465 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,466 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,466 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,466 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,466 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,466 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,466 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,467 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,467 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,467 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,467 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,467 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,467 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,467 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,468 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,468 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,468 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,468 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,468 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,468 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,468 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,468 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,468 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,469 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,469 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,469 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,469 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,469 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,469 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,469 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,469 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,469 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,470 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,470 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,470 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,470 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,470 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,470 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,470 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,470 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,470 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,470 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,471 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,471 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,471 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,471 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,471 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,471 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,471 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,471 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,472 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,472 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,472 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,472 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,472 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,472 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,472 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,472 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,472 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,473 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,473 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,473 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,473 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,474 [INFO] Gpio:278 - dependency for GPIO [DEBUG, RCC, SPI1, UART4]
+2025-12-20 10:48:22,483 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,483 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,483 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,483 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,483 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,483 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,483 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,483 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,484 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,484 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,484 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,484 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,484 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,484 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,484 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,484 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,484 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,485 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,485 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,485 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,485 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,485 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,485 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,485 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,485 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,485 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,486 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,486 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,486 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,486 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,486 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,486 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,486 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,486 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,486 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,487 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,487 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,487 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,487 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,487 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,487 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,487 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,488 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,488 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,488 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,488 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,488 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,488 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,488 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,489 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,489 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,489 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,489 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,489 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,489 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,489 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,489 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,489 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,490 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,490 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,490 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,490 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,490 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,490 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,490 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,490 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,490 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,491 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,491 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,491 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,491 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,491 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,491 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,498 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,498 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,498 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,498 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,498 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,498 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,499 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,500 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,500 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,500 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,500 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,500 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,500 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,500 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,505 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,505 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,505 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,505 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,505 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,505 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:48:22,505 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:49:53,642 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:49:53,859 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:50:37,272 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:50:37,293 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:51:15,209 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:51:18,585 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:54:14,245 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:55:00,827 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:55:48,962 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:55:48,982 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:55:48,994 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 10:57:52,138 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-20 14:54:07,812 [INFO] WebApp:194 - Connection lost
+2025-12-20 14:54:07,936 [INFO] WebApp:191 - Connection restablished

@@ -1,0 +1,166 @@
+/*
+ * font.h
+ *
+ *  Created on: Dec 25, 2025
+ *      Author: lucasnascimento
+ */
+
+#ifndef INC_FONTS_FONT_H_
+#define INC_FONTS_FONT_H_
+
+#define GRB_RED             { 0,   255, 0   }
+#define GRB_CRIMSON         { 20,  220, 60  }
+#define GRB_FIREBRICK       { 34,  178, 34  }
+#define GRB_MAROON          { 0,   128, 0   }
+#define GRB_DARK_RED        { 0,   139, 0   }
+#define GRB_TOMATO          { 99,  255, 71  }
+#define GRB_CORAL           { 127, 255, 80  }
+#define GRB_INDIAN_RED      { 92,  205, 92  }
+#define GRB_LIGHT_CORAL     { 128, 240, 128 }
+#define GRB_SALMON          { 128, 250, 114 }
+
+// ==========================================
+// 2. ORANGES (Green Med, Red High)
+// ==========================================
+#define GRB_ORANGE          { 165, 255, 0   }
+#define GRB_DARK_ORANGE     { 140, 255, 0   }
+#define GRB_ORANGE_RED      { 69,  255, 0   }
+#define GRB_GOLD            { 215, 255, 0   }
+#define GRB_GOLDENROD       { 165, 218, 32  }
+#define GRB_DARK_GOLDENROD  { 134, 184, 11  }
+#define GRB_CHOCOLATE       { 105, 210, 30  }
+#define GRB_SADDLE_BROWN    { 69,  139, 19  }
+#define GRB_SIENNA          { 82,  160, 45  }
+#define GRB_PERU            { 133, 205, 63  }
+
+// ==========================================
+// 3. YELLOWS (Green High, Red High)
+// ==========================================
+#define GRB_YELLOW          { 255, 255, 0   }
+#define GRB_LIGHT_YELLOW    { 255, 255, 224 }
+#define GRB_LEMON_CHIFFON   { 250, 255, 205 }
+#define GRB_PAPAYA_WHIP     { 239, 255, 213 }
+#define GRB_MOCCASIN        { 228, 255, 181 }
+#define GRB_PEACH_PUFF      { 218, 255, 185 }
+#define GRB_PALE_GOLDENROD  { 232, 238, 170 }
+#define GRB_KHAKI           { 230, 240, 140 }
+#define GRB_DARK_KHAKI      { 183, 189, 107 }
+#define GRB_CORN_SILK       { 248, 255, 220 }
+
+// ==========================================
+// 4. GREENS (Green High, Red Low)
+// ==========================================
+#define GRB_PURE_GREEN      { 255, 0,   0   }
+#define GRB_LIME            { 255, 0,   0   }
+#define GRB_LIME_GREEN      { 205, 50,  50  }
+#define GRB_PALE_GREEN      { 251, 152, 152 }
+#define GRB_LIGHT_GREEN     { 238, 144, 144 }
+#define GRB_FOREST_GREEN    { 139, 34,  34  }
+#define GRB_DARK_GREEN      { 100, 0,   0   }
+#define GRB_GREEN_YELLOW    { 255, 173, 47  }
+#define GRB_CHARTREUSE      { 255, 127, 0   }
+#define GRB_LAWN_GREEN      { 252, 124, 0   }
+#define GRB_OLIVE           { 128, 128, 0   }
+#define GRB_OLIVE_DRAB      { 142, 107, 35  }
+#define GRB_SEA_GREEN       { 139, 46,  87  }
+#define GRB_MEDIUM_SEA_GREEN{ 179, 60,  113 }
+#define GRB_SPRING_GREEN    { 255, 0,   127 }
+#define GRB_MINT_CREAM      { 255, 245, 250 }
+
+// ==========================================
+// 5. CYANS & TEALS (Green High, Blue High)
+// ==========================================
+#define GRB_CYAN            { 255, 0,   255 }
+#define GRB_AQUA            { 255, 0,   255 }
+#define GRB_AQUAMARINE      { 255, 127, 212 }
+#define GRB_TURQUOISE       { 224, 64,  208 }
+#define GRB_MEDIUM_TURQUOISE{ 209, 72,  204 }
+#define GRB_DARK_TURQUOISE  { 206, 0,   209 }
+#define GRB_LIGHT_SEA_GREEN { 178, 32,  170 }
+#define GRB_TEAL            { 128, 0,   128 }
+#define GRB_DARK_CYAN       { 139, 0,   139 }
+#define GRB_CADET_BLUE      { 158, 95,  160 }
+
+// ==========================================
+// 6. BLUES (Green Low, Blue High)
+// ==========================================
+#define GRB_BLUE            { 0,   0,   255 }
+#define GRB_MEDIUM_BLUE     { 0,   0,   205 }
+#define GRB_DARK_BLUE       { 0,   0,   139 }
+#define GRB_NAVY            { 0,   0,   128 }
+#define GRB_MIDNIGHT_BLUE   { 25,  25,  112 }
+#define GRB_ROYAL_BLUE      { 105, 65,  225 }
+#define GRB_STEEL_BLUE      { 130, 70,  180 }
+#define GRB_CORNFLOWER_BLUE { 149, 100, 237 }
+#define GRB_DODGER_BLUE     { 144, 30,  255 }
+#define GRB_DEEP_SKY_BLUE   { 191, 0,   255 }
+#define GRB_LIGHT_SKY_BLUE  { 206, 135, 250 }
+#define GRB_SKY_BLUE        { 206, 135, 235 }
+#define GRB_LIGHT_BLUE      { 216, 173, 230 }
+#define GRB_POWDER_BLUE     { 224, 176, 230 }
+#define GRB_ALICE_BLUE      { 248, 240, 255 }
+
+// ==========================================
+// 7. PURPLES (Red High, Blue High)
+// ==========================================
+#define GRB_MAGENTA         { 0,   255, 255 }
+#define GRB_FUCHSIA         { 0,   255, 255 }
+#define GRB_DARK_MAGENTA    { 0,   139, 139 }
+#define GRB_PURPLE          { 0,   128, 128 }
+#define GRB_INDIGO          { 0,   75,  130 }
+#define GRB_VIOLET          { 130, 238, 238 }
+#define GRB_DARK_VIOLET     { 0,   148, 211 }
+#define GRB_BLUE_VIOLET     { 43,  138, 226 }
+#define GRB_MEDIUM_PURPLE   { 112, 147, 219 }
+#define GRB_SLATE_BLUE      { 90,  106, 205 }
+#define GRB_DARK_SLATE_BLUE { 61,  72,  139 }
+#define GRB_LAVENDER        { 230, 230, 250 }
+#define GRB_THISTLE         { 191, 216, 216 }
+#define GRB_PLUM            { 160, 221, 221 }
+#define GRB_ORCHID          { 112, 218, 214 }
+
+// ==========================================
+// 8. PINKS (Red High, Blue Med, Green Low)
+// ==========================================
+#define GRB_PINK            { 192, 255, 203 }
+#define GRB_LIGHT_PINK      { 182, 255, 193 }
+#define GRB_HOT_PINK        { 105, 255, 180 }
+#define GRB_DEEP_PINK       { 20,  255, 147 }
+#define GRB_PALE_VIOLET_RED { 112, 219, 147 }
+#define GRB_MEDIUM_VIOLET_RED { 21, 199, 133 }
+
+// ==========================================
+// 9. WHITES & GRAYS
+// ==========================================
+#define GRB_WHITE           { 255, 255, 255 }
+#define GRB_SNOW            { 250, 255, 250 }
+#define GRB_HONEYDEW        { 255, 240, 240 }
+#define GRB_AZURE           { 255, 240, 255 }
+#define GRB_GHOST_WHITE     { 248, 248, 255 }
+#define GRB_WHITE_SMOKE     { 245, 245, 245 }
+#define GRB_BEIGE           { 245, 245, 220 }
+#define GRB_OLD_LACE        { 245, 253, 230 }
+#define GRB_FLORAL_WHITE    { 250, 255, 240 }
+#define GRB_SILVER          { 192, 192, 192 }
+#define GRB_DARK_GRAY       { 169, 169, 169 }
+#define GRB_GRAY            { 128, 128, 128 }
+#define GRB_DIM_GRAY        { 105, 105, 105 }
+#define GRB_SLATE_GRAY      { 128, 112, 144 }
+#define GRB_BLACK           { 0,   0,   0   }
+
+#endif /* INC_FONTS_FONT_H_ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

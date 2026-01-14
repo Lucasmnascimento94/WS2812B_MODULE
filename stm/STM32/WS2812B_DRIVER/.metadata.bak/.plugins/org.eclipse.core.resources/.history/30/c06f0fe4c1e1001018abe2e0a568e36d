@@ -1,0 +1,46 @@
+/*
+ * memory.hpp
+ *
+ *  Created on: Dec 25, 2025
+ *      Author: lucasnascimento
+ */
+
+#ifndef INC_MEMORY_MEMORY_HPP_
+#define INC_MEMORY_MEMORY_HPP_
+#define MAX 100000
+
+#include <cstdint>
+#include <stack>
+#include <vector>
+#include "font.h"
+
+
+enum MFLAGS : uint8_t  {
+	MAXOUT = 0X00,
+	EMPTY_LIST = 0X01,
+	NO_ERR = 0XFF,
+};
+struct Node {
+	uint8_t i;
+	uint8_t j;
+	uint8_t flag;
+	Node *next;
+};
+
+
+class Pool{
+
+public:
+	Pool();
+	uint32_t size;
+	static Node pool[MAX];
+	uint32_t top = 0;
+	uint32_t bot = 0;
+
+	uint8_t push(uint8_t i, uint8_t j);
+	uint8_t pop();
+};
+
+
+
+#endif /* INC_MEMORY_MEMORY_HPP_ */

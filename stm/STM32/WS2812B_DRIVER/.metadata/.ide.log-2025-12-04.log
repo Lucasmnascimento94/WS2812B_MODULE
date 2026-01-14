@@ -1,0 +1,7 @@
+2025-12-04 00:28:44,891 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-04 00:28:44,944 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-04 00:28:44,997 [WARN] IP:2250 - PinAttribute not found: check if there is a RefParameter without a condition.
+2025-12-04 09:56:57,565 [INFO] WebApp:194 - Connection lost
+2025-12-04 09:56:57,815 [INFO] WebApp:191 - Connection restablished
+2025-12-04 09:57:00,014 [INFO] WebApp:194 - Connection lost
+2025-12-04 09:57:00,270 [INFO] WebApp:191 - Connection restablished

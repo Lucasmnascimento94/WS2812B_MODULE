@@ -1,0 +1,57 @@
+/*
+ * Game.hpp
+ *
+ *  Created on: Nov 28, 2025
+ *      Author: lucasnascimento
+ */
+
+#ifndef INC_GAMES_GAME_HPP_
+#define INC_GAMES_GAME_HPP_
+
+
+#include <cstdint>
+#include <string>
+#include <vector>
+#include "Player.hpp"
+#include "GRID.hpp"
+
+class Game {
+private:
+	uint8_t point_mul;
+    uint32_t current_score = 0;
+    uint32_t record_score;
+	Player *player;
+	Player record_player;
+    std::string game_name;
+    std::vector<std::vector<uint8_t>> game_icon;
+    bool newRecord = false;
+
+    void setGameIcon(std::string name);
+
+public:
+    explicit Game(std::string name);
+
+    /******************************************************************************/
+    /*                        			SETTERS     		   	                  */
+    /******************************************************************************/
+    void setCurrentScore(uint32_t score);
+    void setRecordScore(uint32_t score);
+    void setRecordPname(const std::string& name);
+
+    /******************************************************************************/
+    /*                        			GETTERS     		   	                  */
+    /******************************************************************************/
+    uint32_t getCurrentScore(void);
+
+    uint32_t getRecordScore(void);
+
+    std::vector<std::vector<uint8_t>> getIcon(void){
+    	return this->game_icon;
+    }
+
+    void gameEnd();
+    void gameBegin();
+};
+
+
+#endif /* INC_GAMES_GAME_HPP_ */

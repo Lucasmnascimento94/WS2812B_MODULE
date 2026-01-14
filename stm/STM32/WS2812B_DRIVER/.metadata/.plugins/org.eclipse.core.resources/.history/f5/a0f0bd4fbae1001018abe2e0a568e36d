@@ -1,0 +1,31 @@
+/*
+ * memory.cpp
+ *
+ *  Created on: Dec 25, 2025
+ *      Author: lucasnascimento
+ */
+
+#include "memory.hpp"
+#include <cstddef>
+
+Pool::Pool(){
+	for(uint32_t i = 0; i<MAX; i++){
+		this->pool[i].next = NULL;
+	}
+}
+
+
+uint8_t Pool::push(uint8_t i, uint8_t j){
+	uint32_t pindex = this->top; + 1;
+
+	if(pindex == bindex) return MAXOUT;
+
+	this->top++;
+
+
+	return NO_ERR;
+}
+
+uint8_t Pool::pop(){
+
+}

@@ -1,0 +1,93 @@
+/*
+ * Snake.hpp
+ *
+ *  Created on: Nov 28, 2025
+ *      Author: lucasnascimento
+ */
+
+#ifndef INC_GAMES_SNAKE_SNAKE_HPP_
+#define INC_GAMES_SNAKE_SNAKE_HPP_
+
+#include <cstdint>
+#include "Game.hpp"
+#include "Player.hpp"
+#include <stack>
+#include <vector>
+
+using namespace std;
+
+
+enum Codes : uint8_t {
+	PASS = 0X00,
+
+	HIT_BODY = 0X01,
+	HIT_WALL = 0X02,
+
+	FOOD = 0X0A,
+	FOOD_POISON = 0X03,
+	FOOD_BOOST_SPPED = 0X04,
+	FOOD_DIVIDE = 0X0B,
+	FOOD_EXPLODE = 0X0C,
+	FOOD_BOOST_POINT = 0X0D,
+	FOOD_MURF_SPEED = 0X0E,
+
+	WALK_RIGHT = 0X05,
+	WALK_LEFT = 0X06,
+	WALK_UP = 0X07,
+	WALK_DOWN = 0X08,
+
+	BODY = 0X09,
+	VOID = 0X0F,
+
+};
+
+
+struct Node;
+
+class Snake : public Game{
+private:
+	uint8_t map[96][96];
+	uint16_t size;
+	struct Node *head;
+	struct Node *tail;
+	uint8_t head_color[3];
+	uint8_t body_color[3];
+	Player *player;
+	vector<Node> food;
+	uint8_t direction;
+
+
+
+public:
+	explicit Snake(Player *player);
+
+	uint8_t push(Node*);
+	Node *pop();
+
+	uint8_t ruleCheck(uint8_t i, uint8_t j);
+	uint8_t food_check(Node *food);
+	uint8_t collision_check(Node *node);
+
+	uint16_t getSize();
+	Node *getHead();
+	Node *getTail();
+
+
+	uint8_t walk();
+	void explodeAction();
+	void poisonAction();
+	void divide();
+	void pointModidy();
+	void invisible();
+	void speedModify();
+};
+
+
+struct Node {
+	uint8_t i;
+	uint8_t j;
+	uint8_t flag;
+	Node *next;
+};
+
+#endif /* INC_GAMES_SNAKE_SNAKE_HPP_ */

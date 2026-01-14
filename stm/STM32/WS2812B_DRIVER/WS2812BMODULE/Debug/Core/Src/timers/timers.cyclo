@@ -1,0 +1,12 @@
+../Drivers/CMSIS/Include/core_cm33.h:2390:22:__NVIC_EnableIRQ	2
+../Core/Src/timers/timers.c:38:6:MX_TIM2_Init	1
+../Core/Src/timers/timers.c:53:6:TIM2_IRQHandler	13
+../Core/Src/timers/timers.c:85:20:registerA	6
+../Core/Src/timers/timers.c:106:20:registerB	6
+../Core/Src/timers/timers.c:127:20:registerC	6
+../Core/Src/timers/timers.c:148:20:registerD	6
+../Core/Src/timers/timers.c:170:20:registerE	6
+../Core/Src/timers/timers.c:190:20:confPanel_1	1
+../Core/Src/timers/timers.c:197:20:confPanel_2	1
+../Core/Src/timers/timers.c:204:20:confPanel_3	1
+../Core/Src/timers/timers.c:211:20:confPanel_4	1

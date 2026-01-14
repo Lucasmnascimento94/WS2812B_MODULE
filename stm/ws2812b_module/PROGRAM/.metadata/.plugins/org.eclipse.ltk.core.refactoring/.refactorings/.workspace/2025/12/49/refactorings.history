@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;WS2812BMODULE/WS2812BMODULE&apos;" deleteContents="false" description="Delete resource &apos;WS2812BMODULE/WS2812BMODULE&apos;" element1="/WS2812BMODULE/WS2812BMODULE" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1764711592165"/>
-</session>

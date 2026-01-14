@@ -1,0 +1,351 @@
+/*
+ * GRID.cpp
+ *
+ *  Created on: Nov 30, 2025
+ *      Author: lucasnascimento
+ */
+
+
+#include <GRID.hpp>
+
+#include "timers.h"
+#include "main.h"
+
+
+
+/******************************************************************************/
+/*                        			PUBLIC METHODS		   	                  */
+/******************************************************************************/
+
+
+/*
+ * PORT STRUCTURE FOR BURSTS:
+ * PORTA:: (-, -, 40, 39, -, -, -, -, 8, 7, 6, 5, 4, -, -, -)
+ * PORTB:: (36, 35, 34, -, -, -, -, -, -, -, -, 24, 23, 22, 21)
+ * PORTC:: (-, -, -, -, 38, 37, 12, 11, 10, 9, 3, 2, 1, -, -, - )
+ * PORTD:: (41, 42, 43, 44, 45, 46, 47, 48, 20, 19, 18, 17, 16, 15, 14, 13)
+ * PORTE:: (-, -, -, -, -, -, -, 33, 32, 31, 30, 29, 28, 27, 26, 25)
+ *
+ *
+ * BUFFER :: (41, 42, 43, 44, 45, 46, 47, 48, 20, 19, 18, 17, 16, 15, 14, 13) ( 38, 37, 12, 11, 10, 9, 3, 2, 1 )  (33, 32, 31, 30, 29, 28, 27, 26, 25) (36, 35, 34, 24, 23, 22, 21) ( 40, 39, 8, 7, 6, 5, 4)
+ *
+ * TABLE ::  (25, 24, 23, 48, 47, 46, 45, 44, 22, 21, 20, 19, 16, 15, 14, 13, 12, 11, 10,  9, 41, 40, 39, 38, 34, 33, 32, 31, 30, 29, 28, 27, 26, 37, 36, 35, 18, 17, 43, 42, 1,  2,  3,  4,  5,  6,  7,  8)
+ */
+
+void GRID::bufferWrite(uint8_t g, uint8_t r, uint8_t b, uint8_t i, uint8_t j){
+	uint8_t j_ = j*JUMP;
+	//char str[100];
+
+	this->panelEnable(*this->panelSelect(i, j));
+
+	//uint8_t bSelect = this->bitSelect(i);
+	//uint8_t base = bSelect/16;
+	//uint8_t word = base;
+	//uint8_t bit = bSelect%16;
+	// Writing g
+	for(int i=0; i<8; i++){
+		//word = i*JUMP + base;
+		//(*this->panel)[j_][word] |= (uint16_t)(((g >> i) & 0x01) << (15 - bit));
+		//sprintf(str, "g: %x | r: %x | b: %x | i: %d | j: %d | bit: %d | word: %d | bSelect: %d | writting: %X",g, r, b, i, j, bit, word, bSelect, (*this->panel)[j_][word]);
+		//msg = str;
+		//println(msg);
+	}
+	j_++;
+	// Writing r
+	for(int i=0; i<8; i++){
+		//word = i*JUMP + base;
+		//(*this->panel)[j_][word] |= (((r>>i)&(0x01)) << (15-bit));
+		//sprintf(str, "g: %x | r: %x | b: %x | i: %d | j: %d | bit: %d | word: %d | bSelect: %d | writting: %X",g, r, b, i, j, bit, word, bSelect, (*this->panel)[j_][word]);
+		//msg = str;
+		//println(msg);
+	}
+	j_++;
+	// Writing b
+	for(int i=0; i<8; i++){
+		//word = i*JUMP + base;
+		//(*this->panel)[j_][word] |= (((b>>i)&(0x01)) << (15-bit));
+		//sprintf(str, "g: %x | r: %x | b: %x | i: %d | j: %d | bit: %d | word: %d | bSelect: %d | writting: %X",g, r, b, i, j, bit, word, bSelect, (*this->panel)[j_][word]);
+		//msg = str;
+		//println(msg);
+	}
+	//this->printGrid();
+}
+
+
+void printGrid(uint8_t panel_opcode){
+
+	for(int i=0; i<48*3; i++){
+		for(int j=0; j<3*8; j++){
+			//char str[30];
+			//sprintf(str, "%X", (*this->panel)[i][j]);
+			//s = str;
+			//msg.append(s +  ", ");
+		}
+		//println(msg);
+		//msg.clear();
+	}
+}
+
+void writeBits(uint16_t *word_0, uint16_t *word_1, uint16_t *word_2){
+	uint32_t hword = 0x00;
+	uint32_t lword = 0x00;
+	uint32_t data = 0x00;
+
+	// Drive Lines High
+	GPIOD->BSRR |= 0XFFFF; // <1111 1111 1111 1111> <0xFFFF>
+
+	//char c[40];
+	//sprintf(c, "word: %X", (int)*word_0);
+	//std::string msg = c;
+	//println(msg);
+
+	GPIOA->BSRR = 0XFFFF; // <0011 0000 1111 1000> <0x0C7C>
+	GPIOC->BSRR = 0XFFFF; // <0000 1111 1111 1000> <0x0FF8>
+	GPIOB->BSRR = 0XFFFF; // <1110 0000 0011 1100>  <0xE03C>
+	GPIOE->BSRR = 0XFFFF; // <0000 0001 1111 1111> <0x01FF>
+
+	//NOP8();
+
+	// INSERT A DELAY TO CALIBRATE TIMING.........
+	//HAL_Delay(1);
+	// sending data
+
+//	data = ((uint32_t)*word_0) | (~(((uint32_t)*word_0)<<16) & 0xFFFF0000);
+//	GPIOD->BSRR =	data;
+
+	//sprintf(c, "data: %X", (int)data);
+	//msg = c;
+	//println(msg);
+
+
+	// REGISTER A BITs
+	lword = ((uint32_t)(0x03 << 14) & (uint32_t)*word_1) >> 2;
+	hword = ((uint32_t)(0xFFFF) & (uint32_t)~lword) << 16;
+	data = hword | lword; // Store bit that will be flushed.
+
+
+	lword = ((uint32_t)(0x1F << 9) & (uint32_t)*word_1) >> 6;
+	hword = ((uint32_t)(0xFFFF) & (uint32_t)~lword) << 16;
+	data |= hword | lword;
+	GPIOA->BSRR = data;
+
+
+	lword = ((uint32_t)(0x1FF) & (uint32_t)*word_1) << 3;
+	hword = ((uint32_t)(0xFFFF) & (uint32_t)~lword) << 16;
+	data = hword | lword; // Store bit that will be flushed.
+	GPIOC->BSRR |= data;
+
+	lword = ((uint32_t)(0x07 << 13) & (uint32_t)*word_2);
+	hword = ((uint32_t)(0xFFFF) & (uint32_t)~lword) << 16;
+	data = hword | lword;
+
+	lword = ((uint32_t)(0x0F << 9) & (uint32_t)*word_2) >> 9;
+	hword = ((uint32_t)(0xFFFF) & (uint32_t)~lword) << 16;
+	data |= hword | lword;
+	GPIOB->BSRR |= data;
+
+
+	lword = ((uint32_t)(0x1F) & (uint32_t)word_2);
+	hword = ((uint32_t)(0xFFFF) & (uint32_t)~lword) << 16;
+	data = hword | lword;
+	GPIOE->BSRR |= data;
+
+
+	//HAL_Delay(1);
+	//NOP8();
+	//DRIVE LOW
+	GPIOD->BSRR = 0xFFFF0000; // <1111 1111 1111 1111> <0xFFFF>
+	GPIOA->BSRR = 0xFFFF0000; // <0011 0000 1111 1000> <0x0C7C>
+	GPIOC->BSRR = 0xFFFF0000; // <0000 1111 1111 1000> <0x0FF8>
+	GPIOB->BSRR = 0xFFFF0000; // <1110 0000 0011 1100>  <0xE03C>
+	GPIOE->BSRR = 0xFFFF0000; // <0000 0001 1111 1111> <0x01FF>
+	//HAL_Delay(1);
+	//NOP32();
+}
+
+
+
+void writePanel(){
+
+	//std::array<std::array<uint16_t, 3*8>, 3*48> *panel = this->panel;
+	for(int i = 0; i< 48; i++){
+		for(int j = 0; j<24; j+=3){
+			//writeBits(&(*panel)[i][j], &(*panel)[i][j+1], &(*panel)[i][j+2]);
+		}
+	}
+
+
+}
+
+void displayGrid(){
+	int i=0;
+	int j=0;
+
+	//panelEnable(panelSelect(i, j));
+	writePanel();
+
+	i+=48;
+	//panelEnable(panelSelect(i, j));
+	writePanel();
+
+	i=0; j+=48;
+	//panelEnable(panelSelect(i, j));
+	writePanel();
+
+	i+=48;
+	//panelEnable(panelSelect(i, j));
+	writePanel();
+
+}
+/******************************************************************************/
+/*                        			PRIVATE METHODS		   	                  */
+/******************************************************************************/
+
+uint8_t GRID::busDetect(){
+	if(HAL_GPIO_ReadPin(BUS_1_DETECT_GPIO_Port, BUS_1_DETECT_Pin)) this->n_panels++;
+	if(HAL_GPIO_ReadPin(BUS_2_DETECT_GPIO_Port, BUS_2_DETECT_Pin)) this->n_panels++;
+	if(HAL_GPIO_ReadPin(BUS_3_DETECT_GPIO_Port, BUS_3_DETECT_Pin)) this->n_panels++;
+	if(HAL_GPIO_ReadPin(BUS_4_DETECT_GPIO_Port, BUS_4_DETECT_Pin)) this->n_panels++;
+	return n_panels;
+}
+
+
+uint32_t *GRID::panelSelect(uint8_t i, uint8_t j){
+	uint8_t i_ = i/PANEL_W;
+	uint8_t j_ = j/PANEL_H;
+
+	uint8_t panelCode = 0x00 | i_ | (j_ << 1);
+
+	switch (panelCode){
+		case panel_1_opcode: this->panelEnable(panel_1_opcode); break;
+		case panel_2_opcode: this->panelEnable(panel_2_opcode); break;
+		case panel_3_opcode: this->panelEnable(panel_3_opcode); break;
+		case panel_4_opcode: this->panelEnable(panel_4_opcode); break;
+	}
+
+	return portSelect(i%48, panelCode);
+}
+
+void GRID::panelEnable(uint8_t panel_code){
+	switch (panel_code){
+		case panel_1_opcode: confPanel_1(); break;
+		case panel_2_opcode: confPanel_2(); break;
+		case panel_3_opcode: confPanel_3(); break;
+		case panel_4_opcode: confPanel_4(); break;
+	}
+}
+
+uint32_t *GRID::portSelect(uint8_t i, uint8_t panel_code){
+	if(panel_code == panel_1_opode){
+		switch (toPort[i]){
+			case portA: return panel_1A;
+			case portB: return panel_1B;
+			case portC: return panel_1C;
+			case portD: return panel_1D;
+			case portE: return panel_1E;
+		}
+	}
+	else if(panel_code == panel_2_opode){
+		switch (toPort[i]){
+			case portA: return panel_2A;
+			case portB: return panel_2B;
+			case portC: return panel_2C;
+			case portD: return panel_2D;
+			case portE: return panel_2E;
+		}
+	}
+	else if(panel_code == panel_3_opode){
+		switch (toPort[i]){
+			case portA: return panel_3A;
+			case portB: return panel_3B;
+			case portC: return panel_3C;
+			case portD: return panel_3D;
+			case portE: return panel_3E;
+		}
+	}
+	else{
+		switch (toPort[i]){
+			case portA: return panel_4A;
+			case portB: return panel_4B;
+			case portC: return panel_4C;
+			case portD: return panel_4D;
+			case portE: return panel_4E;
+		}
+	}
+}
+
+
+void confPanel_1(){
+	HAL_GPIO_WritePin(BUS_1_GPIO_Port, BUS_1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(BUS_2_GPIO_Port, BUS_2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(BUS_3_GPIO_Port, BUS_3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(BUS_4_GPIO_Port, BUS_4_Pin, GPIO_PIN_RESET);
+}
+
+void confPanel_2(){
+	HAL_GPIO_WritePin(BUS_1_GPIO_Port, BUS_1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_2_GPIO_Port, BUS_2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(BUS_3_GPIO_Port, BUS_3_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_4_GPIO_Port, BUS_4_Pin, GPIO_PIN_SET);
+}
+
+void confPanel_3(){
+	HAL_GPIO_WritePin(BUS_1_GPIO_Port, BUS_1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_2_GPIO_Port, BUS_2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_3_GPIO_Port, BUS_3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(BUS_4_GPIO_Port, BUS_4_Pin, GPIO_PIN_SET);
+}
+
+void confPanel_4(){
+	HAL_GPIO_WritePin(BUS_1_GPIO_Port, BUS_1_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_2_GPIO_Port, BUS_2_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_3_GPIO_Port, BUS_3_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BUS_4_GPIO_Port, BUS_4_Pin, GPIO_PIN_RESET);
+}
+
+
+
+
+
+/*
+ * PORT STRUCTURE FOR BURSTS:
+ * PORTA:: (-, -, 40, 39, -, -, -, -, 8, 7, 6, 5, 4, -, -, -) ->>>>>>>>>>>>>>>>>> 7 BITS <0011 0000 1111 1000>  <0x0C7C>
+ *
+ * PORTB:: (36, 35, 34, -, -, -, -, -, -, -, -, 24, 23, 22, 21) ->>>>>>>>>>>>>>>> 7 BITS <1110 0000 0000 1111>  <0xE00F>
+ *
+ * PORTC:: (-,  -,   -,  -, 38, 37, 12, 11, 10, 9, 3, 2, 1, -, -, - ) ->>>>>>>>>>>>>> 9 BITS <0000 1111 1111 1000>  <0x0FF8>
+ * 		   (15, 14, 13, 12, 11, 10,  9,  8, 7, 6, 5, 4, 3, 2, 1, 0)
+ *
+ * PORTD:: (41, 42, 43, 44, 45, 46, 47, 48, 20, 19, 18, 17, 16, 15, 14, 13) ->>>> 16 BITS
+ *
+ * PORTE:: (-, -, -, -, -, -, -, 33, 32, 31, 30, 29, 28, 27, 26, 25) ->>>>>>>>>>> 9 BITS <0000 0001 1111 1111> <0x01FF>
+ *
+ * EASY PATH:
+ *
+ * WORD_0 >>>>>>>>>>>> PORTD
+ * WORD_1 >>>>>>>>>>>> PORTA (FIRST 7) :::: PORTC (LAST 9)
+ * WORD_2 >>>>>>>>>>>> PORTB (FIRST 7) :::: PORTE (LAST 9)
+ *
+ * BUFFER ORGANIZATION
+ *
+ * MSB <<>>> LSB
+ *
+ * WORD_0
+ * [48, 47, 46, 45, 44, 43, 42, 41, 20, 19, 18, 17, 16, 15, 14, 13]
+ *
+ * WORD_1
+ * [(40, 39, 8, 7, 6, 5, 4), (38, 37, 12, 11, 10, 9, 3, 2, 1)]
+ *
+ * WORD_2
+ * [(36, 35, 34, 24, 23, 22, 21), (33, 32, 31, 30, 29, 28, 27, 26, 25)]
+ *
+ *
+ * TABLE ::  (25, 24, 23, 48, 47, 46, 45, 44, 22, 21, 20, 19, 16, 15, 14, 13, 12, 11, 10,  9, 41, 40, 39, 38, 34, 33, 32, 31, 30, 29, 28, 27, 26, 37, 36, 35, 18, 17, 43, 42, 1,  2,  3,  4,  5,  6,  7,  8)
+ */
+
+/*
+ * WORD 1 -> GPIOD;
+ */
+
+
+
