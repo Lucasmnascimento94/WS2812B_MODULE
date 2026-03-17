@@ -57,7 +57,7 @@
 // ==========================================
 // 4. GREENS (Green High, Red Low)
 // ==========================================
-#define GRB_PURE_GREEN      0x00FF0000
+#define GRB_GREEN      0x00FF0000
 #define GRB_LIME            0x00FF0000
 #define GRB_LIME_GREEN      0x00CD3232
 #define GRB_PALE_GREEN      0x00FB9898

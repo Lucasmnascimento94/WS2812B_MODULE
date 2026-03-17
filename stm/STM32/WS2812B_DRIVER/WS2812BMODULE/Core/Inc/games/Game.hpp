@@ -12,36 +12,22 @@
 #include <cstdint>
 #include <string>
 #include <vector>
-#include <random>
-#include <chrono>
-#include "Player.hpp"
-#include "GRID.hpp"
+#include <array>
 
+#include <Player.hpp>
+#include <GRID.hpp>
 
-enum Codes : uint8_t {
-	END = 0X00,
-	HIT_BODY = 0X01,
-	HIT_WALL = 0X02,
+#include <timers.h>
+#include <console.hpp>
+#include <console_interface.h>
 
-	FOOD = 0X03,
-	FOOD_POISON = 0X04,
-	FOOD_BOOST_SPEED = 0X05,
-	FOOD_DIVIDE = 0X06,
-	FOOD_EXPLODE = 0X07,
-	FOOD_BOOST_POINT = 0X08,
-	FOOD_MURF_SPEED = 0X09,
+#include <game_interface.h>
 
-	PONG_PAD = 0XE0,
-	PONG_BLOCK = 0XE1,
-	BODY = 0XF0,
-	VOID = 0XF1,
-	PASS = 0XFF,
-};
-
+#include <MyRandom.hpp>
 
 
 class Game {
-private:
+protected:
     uint32_t current_score = 0;
     uint32_t record_score;
 	Player *player;
@@ -52,10 +38,10 @@ private:
     void setGameIcon(std::string name);
 
 public:
-
-    uint8_t map[96][96];
+    MyRandom random_generator;
     explicit Game(std::string name);
-    std::mt19937 engine;
+    ~Game();
+
     GRID grid;
     /******************************************************************************/
     /*                        			SETTERS     		   	                  */
@@ -74,8 +60,6 @@ public:
     std::vector<std::vector<uint8_t>> getIcon(void){
     	return this->game_icon;
     }
-
-    void initRng();
 
     void gameEnd();
     void gameBegin();

@@ -30,7 +30,8 @@ Core/Src/stm32h5xx_it.o: ../Core/Src/stm32h5xx_it.c ../Core/Inc/main.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_uart_ex.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_exti.h \
  ../Core/Inc/stm32h5xx_it.h \
- /home/lucasnascimento/Documents/STM32/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/console/console_interface.h
+ /home/lucasnascimento/Documents/STM32/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/console/console_interface.h \
+ /home/lucasnascimento/Documents/STM32/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/games/game_interface.h
 ../Core/Inc/main.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal.h:
 ../Core/Inc/stm32h5xx_hal_conf.h:
@@ -64,3 +65,4 @@ Core/Src/stm32h5xx_it.o: ../Core/Src/stm32h5xx_it.c ../Core/Inc/main.h \
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_exti.h:
 ../Core/Inc/stm32h5xx_it.h:
 /home/lucasnascimento/Documents/STM32/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/console/console_interface.h:
+/home/lucasnascimento/Documents/STM32/WS2812B_DRIVER/WS2812BMODULE/Core/Inc/games/game_interface.h:

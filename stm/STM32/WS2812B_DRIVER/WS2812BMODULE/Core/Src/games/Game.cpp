@@ -14,14 +14,10 @@ Game::Game(std::string name)
 {
 	// Read current game's Record Score from flash
 	// Read Game Icon from flash and write it to Shared Memory
-	for(int i=0; i<96; i++){
-		for(int j=0; j<96; j++){
-			this->map[i][j] = VOID;
-		}
-	}
 }
 
 
+Game::~Game(){}
 /******************************************************************************/
 /*                        			SETTERS     		   	                  */
 /******************************************************************************/
@@ -51,12 +47,6 @@ void Game::setRecordScore(uint32_t score) {
 // @param  player name
 // -----------------------------------------------------------------------------
 
-
-void Game::initRng() {
-  uint32_t seed = (uint32_t)HAL_GetTick() ^ (uint32_t)TIM2->CNT; // pick a running timer
-  this->engine.seed(seed);
-}
-
 /******************************************************************************/
 /*                        			GETTERS      		   	                  */
 /******************************************************************************/
@@ -85,3 +75,22 @@ void Game::gameEnd() {
 void Game::gameBegin() {
     // TODO
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

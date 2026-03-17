@@ -28,6 +28,7 @@
 /* USER CODE BEGIN TD */
 #include "stdbool.h"
 #include "console_interface.h"
+#include <game_interface.h>
 
 /* USER CODE END TD */
 
@@ -299,7 +300,7 @@ void EXTI13_IRQHandler(void)
   /* USER CODE BEGIN EXTI13_IRQn 0 */
 	if(HAL_GPIO_ReadPin(GPIOC, J_B_Pin) == GPIO_PIN_RESET){
 		console_flag = CONSOLE_START;
-		direction = WALK_RIGHT;
+		//direction = WALK_RIGHT;
 	}
   /* USER CODE END EXTI13_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(J_C_Pin);
@@ -316,7 +317,7 @@ void EXTI14_IRQHandler(void)
   /* USER CODE BEGIN EXTI14_IRQn 0 */
 	if(HAL_GPIO_ReadPin(GPIOC, J_A_Pin) == GPIO_PIN_RESET){
 		console_flag = CONSOLE_SELECT;
-		direction = WALK_RIGHT;
+		//direction = WALK_RIGHT;
 	}
   /* USER CODE END EXTI14_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(J_A_Pin);
@@ -333,7 +334,7 @@ void EXTI15_IRQHandler(void)
   /* USER CODE BEGIN EXTI15_IRQn 0 */
 	if(HAL_GPIO_ReadPin(GPIOC, J_B_Pin) == GPIO_PIN_RESET){
 		console_flag = CONSOLE_STOP;
-		direction = WALK_RIGHT;
+		//direction = WALK_RIGHT;
 	}
   /* USER CODE END EXTI15_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(J_B_Pin);
@@ -401,6 +402,8 @@ void TIM4_IRQHandler(void)
     if (TIM4->SR & TIM_SR_UIF) {
         TIM4->SR &= ~TIM_SR_UIF;
     	pong_ball_flag = PONG_CONSOLE_ACTIVE;
+    	console = CONSOLE_ACTIVE;
+    	my_movement_tim_flag = TIMEOUT;
     }
 
 }
@@ -410,13 +413,10 @@ void TIM4_IRQHandler(void)
   */
 void TIM5_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM5_IRQn 0 */
-
-  /* USER CODE END TIM5_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim5);
-  /* USER CODE BEGIN TIM5_IRQn 1 */
-
-  /* USER CODE END TIM5_IRQn 1 */
+    if (TIM5->SR & TIM_SR_UIF) {
+        TIM5->SR &= ~TIM_SR_UIF;
+        effects_tim_flag = TIMEOUT;
+    }
 }
 
 /**
@@ -424,13 +424,10 @@ void TIM5_IRQHandler(void)
   */
 void TIM6_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM6_IRQn 0 */
-
-  /* USER CODE END TIM6_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim6);
-  /* USER CODE BEGIN TIM6_IRQn 1 */
-
-  /* USER CODE END TIM6_IRQn 1 */
+    if (TIM6->SR & TIM_SR_UIF) {
+        TIM6->SR &= ~TIM_SR_UIF;
+        general_1_tim_flag = TIMEOUT;
+    }
 }
 
 /**
@@ -439,9 +436,11 @@ void TIM6_IRQHandler(void)
 void TIM7_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM7_IRQn 0 */
-
+    if (TIM7->SR & TIM_SR_UIF) {
+        TIM7->SR &= ~TIM_SR_UIF;
+        my_shooting_tim_flag = TIMEOUT;
+    }
   /* USER CODE END TIM7_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim7);
   /* USER CODE BEGIN TIM7_IRQn 1 */
 
   /* USER CODE END TIM7_IRQn 1 */
@@ -452,13 +451,6 @@ void TIM7_IRQHandler(void)
   */
 void TIM8_UP_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM8_UP_IRQn 0 */
-
-  /* USER CODE END TIM8_UP_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim8);
-  /* USER CODE BEGIN TIM8_UP_IRQn 1 */
-
-  /* USER CODE END TIM8_UP_IRQn 1 */
 }
 
 /**
@@ -466,13 +458,10 @@ void TIM8_UP_IRQHandler(void)
   */
 void TIM15_IRQHandler(void)
 {
-  /* USER CODE BEGIN TIM15_IRQn 0 */
-
-  /* USER CODE END TIM15_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim15);
-  /* USER CODE BEGIN TIM15_IRQn 1 */
-
-  /* USER CODE END TIM15_IRQn 1 */
+    if (TIM15->SR & TIM_SR_UIF) {
+        TIM15->SR &= ~TIM_SR_UIF;
+    	tim15 = TIMEOUT;
+    }
 }
 
 /**

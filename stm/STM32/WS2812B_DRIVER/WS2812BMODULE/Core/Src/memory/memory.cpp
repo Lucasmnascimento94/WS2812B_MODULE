@@ -10,10 +10,10 @@
 #include <cstddef>
 
 Pool::Pool(){
+	this->top = 0;
+	this->bot = 0;
+	this->size = 0;
 	for(uint32_t i = 0; i<MAX; i++){
-		this->top = 0;
-		this->bot = 0;
-		this->size = 0;
 		this->pool[i].next = NULL;
 	}
 }

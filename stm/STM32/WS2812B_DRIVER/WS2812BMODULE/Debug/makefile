@@ -15,9 +15,11 @@ RM := rm -rf
 -include Core/Src/records/subdir.mk
 -include Core/Src/print/subdir.mk
 -include Core/Src/memory/subdir.mk
+-include Core/Src/games/space/subdir.mk
 -include Core/Src/games/snake/subdir.mk
 -include Core/Src/games/pong/subdir.mk
 -include Core/Src/games/subdir.mk
+-include Core/Src/event/subdir.mk
 -include Core/Src/console/subdir.mk
 -include Core/Src/UX/subdir.mk
 -include Core/Src/GRID/subdir.mk

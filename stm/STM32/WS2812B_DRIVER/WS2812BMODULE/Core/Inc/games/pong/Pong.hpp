@@ -15,9 +15,13 @@
 #include "font.h"
 #include "console_interface.h"
 
+struct PongGameMap{
+	uint8_t flag;
+};
+
+
 class Pong : public Game{
 private:
-	GRID *grid;
 	struct Node *head = NULL;
 	struct Node *tail = NULL;
 	struct Node *pad = NULL;
@@ -55,6 +59,8 @@ private:
     void displayBall(uint8_t i, uint8_t j);
 public:
 	explicit Pong(Player *player);
+
+	std::array<std::array<PongGameMap, 96>, 96> map;
 
 	uint8_t push(uint8_t i, uint8_t j);
 	uint8_t pop();

@@ -24,22 +24,27 @@ Pong::Pong(Player *player): Game("snake"){
 	this->ball_i = 48;
 	this->ball_j = 48;
 
+	std::string msg = "in pong";
+	println(msg);
 	for(int i=0; i<96; i++){
 		for(int j=91; j<96; j++){
-			this->grid->pixelWrite(this->block_color, i, j);
-			this->map[i][j] = PONG_BLOCK;
+			this->grid.pixelWrite(this->block_color, i, j);
+			this->map[i][j].flag = PONG_BLOCK;
 		}
 	}
 
-
+	msg = "after loop 1";
+	println(msg);
 	for(int i=0; i<11;i++){
-		this->grid->pixelWrite(this->pad_color, 48 - 5 + i, 0);
-		this->map[48 - 5 + i][0] = PONG_PAD;
+		this->grid.pixelWrite(this->pad_color, 48 - 5 + i, 0);
+		this->map[48 - 5 + i][0].flag = PONG_PAD;
 	}
 
 	this->i = 48;
 
-	std::string msg = "PONG CONSTRUCTOR";
+	msg = "in after loop 2";
+	println(msg);
+ msg = "PONG CONSTRUCTOR";
 	println(msg);
 	MX_TIM3_Init();
 	MX_TIM4_Init();
@@ -89,19 +94,19 @@ uint8_t Pong::move_pad(){
 
 	if(direction == WALK_RIGHT){
 
-		this->grid->pixelWrite(GRB_BLACK, this->i - 5, 0);
-		this->map[this->i  - 5][0] = VOID;
+		this->grid.pixelWrite(GRB_BLACK, this->i - 5, 0);
+		this->map[this->i  - 5][0].flag = VOID;
 
-		this->grid->pixelWrite(this->pad_color, pad_i_center + 5, 0);
-		this->map[pad_i_center + 5][0] = PONG_PAD;
+		this->grid.pixelWrite(this->pad_color, pad_i_center + 5, 0);
+		this->map[pad_i_center + 5][0].flag = PONG_PAD;
 
 	}else if (direction == WALK_LEFT){
 
-			this->grid->pixelWrite(GRB_BLACK, this->i + 5, 0);
-			this->map[this->i  + 5][0] = VOID;
+			this->grid.pixelWrite(GRB_BLACK, this->i + 5, 0);
+			this->map[this->i  + 5][0].flag = VOID;
 
-			this->grid->pixelWrite(this->pad_color, pad_i_center - 5, 0);
-			this->map[pad_i_center - 5][0] = PONG_PAD;
+			this->grid.pixelWrite(this->pad_color, pad_i_center - 5, 0);
+			this->map[pad_i_center - 5][0].flag = PONG_PAD;
 	}
 
 	this->i = pad_i_center;
@@ -159,8 +164,8 @@ uint8_t Pong::move_ball() {
     this->ball_j = (uint8_t)next_j;
 
     // draw
-	this->grid->pixelWrite(GRB_BLACK, ci, cj);
-	this->grid->pixelWrite(this->pad_color, this->ball_i, this->ball_j);
+	this->grid.pixelWrite(GRB_BLACK, ci, cj);
+	this->grid.pixelWrite(this->pad_color, this->ball_i, this->ball_j);
     //this->clearBall(ci, cj);
     //this->displayBall(this->ball_i, this->ball_j);
 
@@ -197,14 +202,14 @@ uint8_t Pong::collision_check(int16_t *x, int16_t *y){
 		this->ball_acc_j_fp = 0;
 		*y = 0;
 
-	}else if(this->map[*x][*y] == PONG_BLOCK){
-		this->map[*x][*y] = VOID;
-		this->grid->pixelWrite(GRB_BLACK, *x, *y);
+	}else if(this->map[*x][*y].flag == PONG_BLOCK){
+		this->map[*x][*y].flag = VOID;
+		this->grid.pixelWrite(GRB_BLACK, *x, *y);
         *y -= 1;
         this->ball_vy = (int8_t)(-this->ball_vy);
         this->ball_acc_j_fp = 0;
 
-	}else if(this->map[*x][*y] == PONG_PAD){
+	}else if(this->map[*x][*y].flag == PONG_PAD){
         *y += 1;
         this->ball_vy = (int8_t)(-this->ball_vy);
         this->ball_acc_j_fp = 0;

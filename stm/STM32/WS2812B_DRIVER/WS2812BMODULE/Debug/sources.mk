@@ -39,12 +39,14 @@ CPP_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 Core/Src/GRID \
+Core/Src \
 Core/Src/UX \
 Core/Src/console \
+Core/Src/event \
 Core/Src/games \
 Core/Src/games/pong \
 Core/Src/games/snake \
-Core/Src \
+Core/Src/games/space \
 Core/Src/memory \
 Core/Src/print \
 Core/Src/records \

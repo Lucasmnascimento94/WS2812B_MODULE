@@ -1,14 +1,13 @@
-#include "main.h"
-#include <GRID.hpp>
+#include <main.h>
 #include <print.hpp>
-#include <Pong.hpp>
-#include "timers.h"
-#include "GRID_INTERFACE.h"
-#include "Player.hpp"
 
-#include "Pong.hpp"
-#include "Snake.hpp"
-#include "console.hpp"
+// Side Libraries
+
+// Game Libraries
+#include <Pong.hpp>
+#include <SpaceGame.hpp>
+#include <Snake.hpp>
+
 
 DMA_HandleTypeDef handle_GPDMA1_Channel5;
 SPI_HandleTypeDef hspi1;
@@ -37,17 +36,16 @@ int main(void){
 	GRID grid{};
 	std::string msg = "Hello world - Hello Life - Hello Plytmouth - Hello UMB - Hellow Embedded Systems\n";
 	Player player;
-	MX_TIM2_Init();
 	uint16_t count = 0;
 	println(msg);
+	MX_TIM2_Init();
 
-	//Snake snake{&player};
 
 
 	while (1) {
 		// Initial Interface - Handle Users input character and Game Selection.
 		uint8_t game = userStart(player, grid);
-		HAL_Delay(1000);
+		HAL_Delay(100);
 		switch (game){
 			case GAME_SNAKE:{
 				Snake snake{&player};
@@ -55,15 +53,18 @@ int main(void){
 				break;}
 
 			case GAME_PONG:{
-				  GPIO_InitStruct.Pin = J_C_Pin|J_A_Pin|J_B_Pin|J_UP_Pin
-				                          |J_DOWN_Pin|J_LEFT_Pin|J_RIGHT_Pin;
-				  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
-				  GPIO_InitStruct.Pull = GPIO_NOPULL;
-				  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 				Pong pong{&player};
 				msg = "CAlling Pong";
 				println(msg);
 				pong.start();
+				break;}
+
+			case GAME_SPACE:{
+				SpaceGame space_game{&player};
+				msg = "CAlling Space";
+				println(msg);
+				space_game.start();
+				//pong.start();
 				break;}
 
 			default:
@@ -73,12 +74,7 @@ int main(void){
 		if(count++ == 50){
 			count = 0;
 		}
-		println(msg);
 		HAL_Delay(10);
-		//snake.direction = WALK_DOWN;
-		//vert();
-		//pacmanWalkRight(grid);
-
 	}
 }
 

@@ -32,7 +32,11 @@ void displayPongBig();
 void getName(Player &player);
 uint8_t userStart(Player &player, GRID &grid);
 
-void MX_TIM4_Init();
 void MX_TIM3_Init();
+void MX_TIM4_Init();
+void MX_TIM5_Init();
+void MX_TIM6_Init();
+void MX_TIM7_Init();
+void MX_TIM15_Init();
 
 #endif /* INC_CONSOLE_CONSOLE_HPP_ */

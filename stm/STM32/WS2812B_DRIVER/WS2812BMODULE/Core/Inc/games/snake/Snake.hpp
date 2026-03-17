@@ -18,6 +18,10 @@
 #include "console_interface.h"
 using namespace std;
 
+struct SnakeGameMap{
+	uint8_t flag;
+};
+
 class Snake : public Game{
 private:
 	struct Node *head = NULL;
@@ -29,7 +33,7 @@ private:
 	uint32_t head_color = GRB_BLUE;
 	uint32_t body_color = GRB_RED;
 
-	uint32_t food_color = GRB_PURE_GREEN;
+	uint32_t food_color = GRB_GREEN;
 
 	uint32_t food_poison_color = GRB_VIOLET;
 
@@ -46,6 +50,7 @@ private:
 
 public:
 	explicit Snake(Player *player);
+	std::array<std::array<SnakeGameMap, 96>, 96> map;
 
 	uint8_t push(uint8_t i, uint8_t j);
 	uint8_t pop();

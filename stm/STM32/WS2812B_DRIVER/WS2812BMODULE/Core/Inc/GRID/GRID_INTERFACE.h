@@ -12,6 +12,8 @@
 
 #define PANEL_W 48
 #define PANEL_H 48
+#define GRID_H 96
+#define GRID_W 96
 #define JUMP 24
 
 #define GRID_MASK_PORTA 0x1F0C
